@@ -1,0 +1,24 @@
+{
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "tsserver.npm": "/usr/bin/npm",
+    "eslint.options": {
+        "env": {
+            "browser": true,
+            "node": true
+        }
+    },
+    "eslint.enable": false,
+    "prettier.tabWidth": 4,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "json",
+        "markdown",
+        "python"
+    ]
+}
