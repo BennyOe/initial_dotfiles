@@ -1,14 +1,9 @@
+" Plugins
 call plug#begin("~/.config/nvim/plugged")
+
   " Plugin Section
   "colorschemes
-  Plug 'arcticicestudio/nord-vim'
   Plug 'joshdick/onedark.vim'
-  Plug 'lifepillar/vim-solarized8'
-  "NerdTree File Explorer
-  Plug 'preservim/nerdtree'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'Xuyuanp/nerdtree-git-plugin' 
-  Plug 'ryanoasis/vim-devicons'
   "Fuzzy Search 
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -18,13 +13,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'w0rp/ale'
   Plug 'sheerun/vim-polyglot'
-  Plug 'mhinz/vim-startify'
- "Plug 'zxqfl/tabnine-vim'
-      "latex plugins
-  " A Vim Plugin for Lively Previewing LaTeX PDF Output
-  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-  Plug 'lervag/vimtex'
-  "Snippets
+  " snippets
   Plug 'honza/vim-snippets'
   ""undoTree
   Plug 'mbbill/undotree'
@@ -36,28 +25,30 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'preservim/nerdcommenter'
   "git from vim
   Plug 'tpope/vim-fugitive'
-  "Plugin to move around quicker
-  Plug 'easymotion/vim-easymotion'
   "PLugin to autoclose brackets
   Plug 'jiangmiao/auto-pairs'
-   "Surround for Brackets
+  "Plugin to wrap text
   Plug 'tpope/vim-surround'
-  "Tag List / List of variables and Methods
-  Plug 'yegappan/taglist'
-  "Rainbow Brackets
-  Plug 'frazrepo/vim-rainbow'
-  "Erlang
-  Plug 'vim-erlang/vim-erlang-runtime'
-  call plug#end()
-" Everything after this line will be the config section
-" Neovim config
+  "Plugin for icons
+  Plug 'ryanoasis/vim-devicons'
+  "Plugin for startup screen
+  Plug 'mhinz/vim-startify'
+  "Plugins for latex
+  Plug 'lervag/vimtex'
+  "Rainbow colored brackets and csv
+  Plug 'luochen1990/rainbow'
+  "Grammar checker
+  Plug 'rhysd/vim-grammarous'
+  "Treesitter for better syntax highlighting
+  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+call plug#end()
+
+"" Neovim config
 syntax enable " enable syntax highglighting
 syntax on " turn on syntax highlighting
 set undodir=~/.config/nvim/undodir " set undotree file directory
 set undofile " set undotree to save to file
-set number " set line number
-set number relativenumber " set the line numbers to relative
-set nu ru "set the line numbers to hybrid
+set number relativenumber " set line number
 set wrap " set no soft wrap
 set linebreak " only break at words
 set nolist " so softwrapping works
@@ -69,33 +60,37 @@ set noswapfile " set no swap file
 set nobackup " set no backup file
 set breakindent " set every wrapped line will continue visually indented                    
 set smartindent " set smart indentation
-set ignorecase "set to case insensitive
-set smartcase " set to be cas sensitive when there is capital letter, this need set incsearch to work
-"set incsearch " set search to be case insensitive
-set hidden
-set updatetime=250
+set ignorecase "set search to case insensitive
+set smartcase " set to be case sensitive when there is capital letter, this needs set incsearch to work
+set incsearch " for smartcase
+set hidden " sp multiple buffers can be open
+set updatetime=250 " update faster for autocompletion
 set shortmess+=c " for CoC plugin
 set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
-" set clipboard=unnamedplus //unused atm
+set spellsuggest=fast,10
 " set leader to space
 let mapleader=" "
-"use ; instead of :
+
+"" Keymaps
+" use ; instead of :
 nnoremap ; :
 vnoremap ; :
-" " Map show undo tree
+" Map show undo tree
 nnoremap <leader>u :UndotreeToggle<CR>
-" " Panel switching
+" Panel switching
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
-" "remove seach highlighting
-map <leader>n :set hls!<CR>
-" " Split panel
+" remove seach highlighting
+map <leader>n :noh<CR>
+" Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
 nnoremap <leader>ts :belowright 12split<CR> :term<CR> 
-" " Line moving
+" close panels
+nnoremap <leader>x <C-w>c
+" Line moving
 " " Normal mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -105,102 +100,95 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
-" " Remap for yanking into clipboard
+" Remap for yanking into clipboard
 nnoremap <leader>y "+y
-nnoremap <leader>p "*p
+nnoremap <leader>p "+p
 " " in visual mode
 vnoremap <leader>y "+y
-vnoremap <leader>p "*p
-" " make F5 run current buffer
+vnoremap <leader>p "+p
+" make esc exit from the terminal in vim
+tnoremap <Esc> <C-\><C-n>
+" navigate quickfix
+nnoremap <leader><leader>j :cn<CR>
+nnoremap <leader><leader>k :cp<CR>
+nnoremap <leader><leader>q :copen<CR>
+nnoremap <leader><leader>l :.cc<CR>
+" map spelling 
+nnoremap <F8>  :setlocal spell spelllang=de,en <return>
+nnoremap <F9>  :set nospell <return>
+" ctrl l to correct the last spelling mistake
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+"" Autocommands
+" make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
 autocmd Filetype python inoremap <buffer> <F5> <C-o>:update<Bar>execute '!python3 '.shellescape(@%, 1)<CR>
 autocmd Filetype java   inoremap <buffer> <F5> <C-o>:update<Bar>execute '!javac '.shellescape(@%, 1)<CR>
+autocmd Filetype ruby   inoremap <buffer> <F5> <C-o>:update<Bar>execute '!ruby '.shellescape(@%, 1)<CR>
 " save the folds in a file and open them when file is opened
 augroup remember_folds
   autocmd!
   autocmd BufWinLeave * silent! mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
-" map spelling 
-map <F8>  :setlocal spell spelllang=de,en <return>
-map <F9>  :set nospell <return>
-"Theme settings
+
+"" Theme settings
 if (has("termguicolors"))
    set termguicolors
 endif
 set background=dark
-colorscheme solarized8_flat
-" set the transparency or opacity of vim
-hi Normal guibg=NONE ctermbg=NONE
-" NERDTree config
-let g:NERDTreeShowHidden = 1 
-let g:NERDTreeMinimalUI = 1 " hide helper
-let g:NERDTreeIgnore = ['^node_modules$'] " ignore node_modules to increase load speed 
-let g:NERDTreeStatusline = '' " set to empty to use lightline
-" " Toggle
-noremap <silent> <C-b> :NERDTreeToggle<CR>
-" " Close window if NERDTree is the last one
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" " Map to open current file in NERDTree and set size
-nnoremap <leader>fv :NERDTreeFind<bar> :vertical resize 45<CR>
-
-" NERDTree Syntax Highlight
-" " Enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFolders = 1 
-" " Highlights the folder name
-let g:NERDTreeHighlightFoldersFullName = 1 
-" " Color customization
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
-" " This line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor = {} 
-" " Sets the color of css files to blue
-let g:NERDTreeExtensionHighlightColor['css'] = s:blue 
-" " This line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor = {} 
-" " Sets the color for .gitignore files
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange 
-" " This line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor = {} 
-" " Sets the color for files ending with _spec.rb
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red 
-" " Sets the color for folders that did not match any rule
-let g:WebDevIconsDefaultFolderSymbolColor = s:beige 
-" " Sets the color for files that did not match any rule
-let g:WebDevIconsDefaultFileSymbolColor = s:blue 
-
-" NERDTree Git Plugin
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "? "
-    \ }
+let g:onedark_hide_endofbuffer = 1
+colorscheme onedark
+" RainbowBrackets config
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\	'guifgs': ['#ABB2BF','#E5C07B', '#61AFEF', '#C678DD', '#56B6C2'],
+\	'ctermfgs': ['cyan', 'lightred', 'lightyellow', 'blue'],
+\	'guis': [''],
+\	'cterms': [''],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'markdown': {
+\			'parentheses_options': 'containedin=markdownCode contained',
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], 
+\		},
+\		'haskell': {
+\			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+\		},
+\		'vim': {
+\			'parentheses_options': 'containedin=vimFuncBody',
+\		},
+\		'perl': {
+\			'syn_name_prefix': 'perlBlockFoldRainbow',
+\		},
+\		'stylus': {
+\			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+\		},
+\		'css': 0,
+\	}
+\}
+" Latex Plugins config
+nnoremap <leader>tt :VimtexCompile<CR>
+nnoremap <leader>tv :VimtexView<CR>
+nnoremap <leader>tc :VimtexTocToggle<CR>
+nnoremap <leader>te :VimtexErrors<CR>
+let g:vimtex_toc_config = {'layer_status': {'label':0, 'include':0}, 'show_help':0}
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+autocmd Filetype tex setl spell spelllang=de,en
+autocmd Filetype tex setl updatetime=250
+" CocExplorer config
+noremap <silent> <C-b> :CocCommand explorer<CR>
 "Fuzzy search config
 nnoremap <C-p> :Files<CR>
-"let $FZF_DEFAULT_COMMAND='find .'
+let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -210,17 +198,18 @@ let g:fzf_action = {
 let g:lightline = {
   \     'colorscheme': 'onedark',
   \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'left': [['mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified']],
   \         'right': [['cocstatus'], ['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
   \     },
 	\ 'component_function': {
-	\   'cocstatus': 'coc#status'
+	\   'cocstatus': 'coc#status',
+    \   'gitbranch': 'FugitiveHead'
 	\ },
   \ }
 "CoC and ALE config
 " ALE (Asynchronous Lint Engine)
 let g:ale_fixers = {
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['prettier','eslint'],
       \ 'tex': ['latexindent'],
       \ }
 let g:ale_sign_error = ''
@@ -231,19 +220,28 @@ let g:ale_fix_on_save = 1
 " " COC extension
 let g:coc_user_config = {}
 let g:coc_global_extensions = [
+      \ 'coc-clangd', 
       \ 'coc-css', 
+      \ 'coc-eslint',
+      \ 'coc-explorer',
       \ 'coc-html', 
+      \ 'coc-java', 
       \ 'coc-json', 
       \ 'coc-prettier', 
-      \ 'coc-tsserver', 
+      \ 'coc-python',
       \ 'coc-snippets', 
-      \ 'coc-eslint']
+      \ 'coc-solargraph',
+      \ 'coc-tabnine',
+      \ 'coc-tsserver', 
+      \ 'coc-vimtex', 
+      \ 'coc-word']
 " " To go back to previous state use Ctrl+O
 nmap <silent><leader>gd <Plug>(coc-definition)
 nmap <silent><leader>gy <Plug>(coc-type-definition)
 nmap <silent><leader>gi <Plug>(coc-implementation)
 nmap <silent><leader>gr <Plug>(coc-references)
 
+" " remap tab to go thorough autocompletion menu
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -317,32 +315,20 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"Easymotion setup
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap <Leader><Leader>s <Plug>(easymotion-overwin-f2)
-
-" Remap Esc to jk
-imap jk <Esc>
-
-"Turn on case-insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)unction
-let g:rainbow_active = 1
-
-" Latex setup
-autocmd Filetype tex setl updatetime=1000
-nnoremap <leader>tv :LLPStartPreview<CR>
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-let g:livepreview_previewer = 'zathura'
-"remaps going out of the terminal with esc
-tnoremap <Esc> <C-\><C-n> 
-
+" Startify setup
+let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}, {'i': '~/.i3/config'}]
+"" Treesitter
+"lua << EOF
+"require'nvim-treesitter.configs'.setup {
+  "ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  "highlight = {
+    "enable = true,              -- false will disable the whole extension
+    "disable = {},  -- list of language that will be disabled
+  "},
+  "indent = {
+    "enable = true
+  "}
+"}
+"EOF
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
