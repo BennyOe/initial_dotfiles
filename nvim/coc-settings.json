@@ -1,10 +1,6 @@
 {
-    "eslint.filetypes": [
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact"
-    ],
+    "python.jediEnabled": false,
+    "eslint.nodePath": "/home/paul/.config/yarn/global/node_modules",
     "tsserver.npm": "/usr/bin/npm",
     "eslint.options": {
         "env": {
@@ -12,13 +8,29 @@
             "node": true
         }
     },
-    "eslint.enable": false,
     "prettier.tabWidth": 4,
+    "prettier.singleQuote": false,
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
         "typescript",
         "json",
         "markdown",
+        "ruby",
         "python"
-    ]
+    ],
+    "solargraph.hover": true,
+    "solargraph.formatting": true,
+    "solargraph.autoformat": true,
+    "solargraph.diagnostics": true,
+    "explorer.buffer.root.template": "[icon & 1]  OPEN EDITORS",
+    "explorer.file.root.template": "[icon & 1]  PROJECT ([root])",
+    "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 2]  [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5]",
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "languageserver": {
+        "erlang": {
+          "command": "erlang_ls",
+          "filetypes": ["erlang"]
+        }
+      }
 }
