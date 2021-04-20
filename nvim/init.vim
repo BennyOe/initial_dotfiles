@@ -40,7 +40,7 @@ call plug#begin("~/.config/nvim/plugged")
   "Grammar checker
   Plug 'rhysd/vim-grammarous'
   "Treesitter for better syntax highlighting
-  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "" Neovim config
@@ -118,7 +118,10 @@ nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
+" jk to esc
+inoremap jk <Esc>
+inoremap jj <Esc>
+inoremap kj <Esc>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -318,17 +321,17 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Startify setup
 let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}, {'i': '~/.i3/config'}]
 "" Treesitter
-"lua << EOF
-"require'nvim-treesitter.configs'.setup {
-  "ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  "highlight = {
-    "enable = true,              -- false will disable the whole extension
-    "disable = {},  -- list of language that will be disabled
-  "},
-  "indent = {
-    "enable = true
-  "}
-"}
-"EOF
-"set foldmethod=expr
-"set foldexpr=nvim_treesitter#foldexpr()
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = {},  -- list of language that will be disabled
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()

@@ -49,5 +49,9 @@ chmod +x ~/.dotfiles/scripts/launchspt
 ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/rofi-power-menu
 
+rm -rf ~/.config/flameshot
+mkdir ~/.config/flameshot
+ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
+
 printf " dotfiles successfully installed\n"
 sleep 2
