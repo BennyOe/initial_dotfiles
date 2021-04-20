@@ -89,7 +89,7 @@ alias gck='git checkout'
 alias wmclass='xprop _NET_WM_PID WM_CLASS'
 
 # alias for spotify-tui
-alias spotify='sh ~/.scripts/launchspt'
+alias spotify='sh ~/.local/bin/launchspt'
 
 #alias for foldersize
 alias size='sudo du -shc '
