@@ -50,4 +50,4 @@ ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/rofi-power-menu
 
 printf " dotfiles successfully installed\n"
-sleep2
+sleep 2
