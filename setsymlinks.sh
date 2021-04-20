@@ -12,7 +12,7 @@ rm ~/.vimrc
 ln -sv ~/.dotfiles/.vimrc ~
 
 rm ~/.dwm/autostart.sh
-chmod +x ~/.dwm/autostart.sh
+chmod +x ~/.dotfiles/autostart.sh
 ln -sv ~/.dotfiles/autostart.sh ~/.dwm/
 
 mkdir ~/.config/dunst
@@ -43,11 +43,11 @@ ln -sv ~/.dotfiles/rofi/themes/onedark.rasi ~/.config/rofi/themes/
 
 mkdir ~/.local/bin
 ln -sv ~/.dotfiles/scripts/pdfshrink ~/.local/bin/ 
-chmod +x ~/.local/bin/ pdfshrink
+chmod +x ~/.dotfiles/scripts/pdfshrink
 ln -sv ~/.dotfiles/scripts/launchspt ~/.local/bin/ 
-chmod +x ~/.local/bin/launchspt
+chmod +x ~/.dotfiles/scripts/launchspt
 ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/ 
-chmod +x ~/.local/bin/rofi-power-menu
+chmod +x ~/.dotfiles/scripts/rofi-power-menu
 
 printf " dotfiles successfully installed\n"
 sleep 2
