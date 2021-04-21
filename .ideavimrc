@@ -1,0 +1,19 @@
+syn on
+set linebreak
+set ruler
+set tabstop=4
+set expandtab
+set showmatch
+set number
+set autoindent
+set ignorecase " set to ignore case while searching
+set smartcase " set to be cas sensitive when there is capital letter, this need set incsearch to work
+"set clipboard=unnamedplus
+"set clipboard+=ideaput
+let mapleader=" "
+" " Remap for yanking into clipboard
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+" " in visual mode
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
