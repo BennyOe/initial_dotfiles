@@ -48,10 +48,30 @@ ln -sv ~/.dotfiles/scripts/launchspt ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/launchspt
 ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/rofi-power-menu
+ln -sv ~/.dotfiles/scripts/dekeys ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/dekeys
+ln -sv ~/.dotfiles/scripts/enkeys ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/enkeys
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
+
+rm -rf ~/.config/autorandr/
+ln ~/.dotfiles/autorandr ~/.config/autorandr
+chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
+
+rm -f .Xmodmap
+ln -sv ~/.dotfiles/.Xmodmap ~/
+
+rm -f ~/.ideavimrc
+ln -sv ~/.dotfiles/.ideavimrc ~/
+
+rm -rf ~/.config/multilock
+ln ~/.dotfiles/multilock ~/.config/multilock
+
+rm -f ~/.config/mimeapps.list
+ln ~/.dotfiles/mimeapps.list ~/.config/mimeapps.list
 
 printf " dotfiles successfully installed\n"
 sleep 2
