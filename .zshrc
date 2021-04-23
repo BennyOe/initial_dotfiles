@@ -51,9 +51,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# fuzzy find
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias config='/usr/bin/git --git-dir=/home/benjamino/.myconfig/ --work-tree=/home/benjamino'
@@ -102,3 +99,25 @@ yay() {
 	/usr/bin/yay "$@"
 	pkill -RTMIN+1 dwmblocks
 }
+#function to safely remove my hdd
+removeHDD() {
+  udisksctl unmount -b /dev/sdb1
+  udisksctl unmount -b /dev/sdb2
+  udisksctl power-off -b /dev/sdb
+}
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/paul/.applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/paul/.applications/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
