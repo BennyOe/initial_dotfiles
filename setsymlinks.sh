@@ -19,6 +19,7 @@ mkdir ~/.config/dunst
 rm ~/.config/dunst/dunstrc
 ln -sv ~/.dotfiles/dunstrc ~/.config/dunst/ 
 
+sudo mkdir /usr/share/xsessions 
 sudo cp ~/.dotfiles/dwm.desktop /usr/share/xsessions/dwm.desktop
 
 mkdir ~/.config/picom/
