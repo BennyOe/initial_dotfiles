@@ -1,5 +1,6 @@
 remove Lock = Caps_Lock
 
+
 keycode  66 = Mode_switch
 keycode  24 = q Q at at at
 keycode  26 = e E EuroSign EuroSign
