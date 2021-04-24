@@ -17,3 +17,6 @@ numlockx on &
 
 # map lctrl to escape
 xcape -e 'Control_L=Escape' &
+
+#start polkit agent
+polkit-dumb-agent &
