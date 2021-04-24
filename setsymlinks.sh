@@ -19,7 +19,7 @@ mkdir ~/.config/dunst
 rm ~/.config/dunst/dunstrc
 ln -sv ~/.dotfiles/dunstrc ~/.config/dunst/ 
 
-sudo ln -sv ~/.dotfiles/dwm.desktop /usr/share/xsessions
+sudo cp ~/.dotfiles/dwm.desktop /usr/share/xsessions/dwm.desktop
 
 mkdir ~/.config/picom/
 rm ~/.config/picom/picom.conf
@@ -58,7 +58,7 @@ mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
 
 rm -rf ~/.config/autorandr/
-ln ~/.dotfiles/autorandr ~/.config/autorandr
+ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
 chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
 
 rm -f .Xmodmap
