@@ -73,5 +73,10 @@ ln ~/.dotfiles/multilock ~/.config/multilock
 rm -f ~/.config/mimeapps.list
 ln ~/.dotfiles/mimeapps.list ~/.config/mimeapps.list
 
+rm -rf ~/.config/gtk-3.0/
+mkdir ~/.config/gtk-3.0
+ln ~/.dotfiles/settings.ini ~/.config/gtk-3.0
+chmod +x ~/.config/gtk-3.0/settings.ini
+
 printf " dotfiles successfully installed\n"
 sleep 2
