@@ -79,5 +79,6 @@ mkdir ~/.config/gtk-3.0
 ln ~/.dotfiles/settings.ini ~/.config/gtk-3.0
 chmod +x ~/.config/gtk-3.0/settings.ini
 
+sudo cp ~/.dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 printf " dotfiles successfully installed\n"
 sleep 2
