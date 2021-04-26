@@ -87,7 +87,7 @@ chmod +x ~/.local/bin/communications.sh
 
 sudo mkdir /usr/share/wallpapers
 sudo cp ~/.dotfiles/default_wallpaper.png /usr/share/wallpapers/default_wallpaper.png
-ln -s ~/.dotfiles/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo ln -s ~/.dotfiles/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 sudo cp ~/.dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 printf " dotfiles successfully installed\n"
