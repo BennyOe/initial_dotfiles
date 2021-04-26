@@ -6,6 +6,7 @@ nitrogen --restore &
 picom &
 redshift &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
+
 # systray applets
 nm-applet & 
 pa-applet &
