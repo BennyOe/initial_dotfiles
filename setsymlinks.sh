@@ -34,7 +34,8 @@ ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 rm -rf ~/.config/ranger
 mkdir ~/.config/ranger
 ln -sv ~/.dotfiles/ranger/rc.conf ~/.config/ranger/ 
-ln -sv ~/.dotfiles/ranger/rifle.conf ~/.config/ranger/ 
+ln -sv ~/.dotfiles/ranger/rifle.conf ~/.config/ranger/
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
