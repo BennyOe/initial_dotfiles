@@ -1,4 +1,5 @@
 xrandr -s 1920x1080
+#xrandr --output eDP1 --scale 0.7
 autorandr --change
 dwmblocks & 
 nitrogen --restore &
@@ -21,6 +22,9 @@ xcape -e 'Control_L=Escape' &
 
 #start polkit agent
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# mount 
+#mount /dev/sda1 ~/Daten
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
