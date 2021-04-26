@@ -61,9 +61,9 @@ rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
 
-rm -rf ~/.config/autorandr/
-ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
-chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
+#rm -rf ~/.config/autorandr/
+#ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
+#chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
 
 rm -f .Xmodmap
 ln -sv ~/.dotfiles/.Xmodmap ~/
@@ -72,7 +72,7 @@ rm -f ~/.ideavimrc
 ln -sv ~/.dotfiles/.ideavimrc ~/
 
 rm -rf ~/.config/multilock
-ln ~/.dotfiles/multilock ~/.config/multilock
+ln -sv ~/.dotfiles/multilock ~/.config/multilock
 
 rm -f ~/.config/mimeapps.list
 ln ~/.dotfiles/mimeapps.list ~/.config/mimeapps.list
@@ -85,6 +85,7 @@ chmod +x ~/.config/gtk-3.0/settings.ini
 ln ~/.dotfiles/communications.sh ~/.local/bin/
 chmod +x ~/.local/bin/communications.sh
 
+mkdir /usr/share/wallpapers
 sudo cp ~/.dotfiles/default_wallpaper.png /usr/share/wallpapers/default_wallpaper.png
 ln -s ~/.dotfiles/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
