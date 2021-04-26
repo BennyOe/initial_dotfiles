@@ -8,6 +8,7 @@ xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l
 # systray applets
 nm-applet & 
 pa-applet &
+blueman-applet &
 
 # set the delay time for the keyboard
 xset r rate 200 30 &
