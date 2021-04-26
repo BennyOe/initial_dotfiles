@@ -20,8 +20,7 @@ numlockx on &
 xcape -e 'Control_L=Escape' &
 
 #start polkit agent
-polkit-dumb-agent &
-lxqt-policykit-agent &
+/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
