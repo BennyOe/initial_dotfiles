@@ -21,6 +21,7 @@ xcape -e 'Control_L=Escape' &
 
 #start polkit agent
 polkit-dumb-agent &
+lxqt-policykit-agent &
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
