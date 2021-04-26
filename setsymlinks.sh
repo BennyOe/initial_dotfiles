@@ -37,6 +37,7 @@ ln -sv ~/.dotfiles/ranger/rc.conf ~/.config/ranger/
 ln -sv ~/.dotfiles/ranger/rifle.conf ~/.config/ranger/
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ln -s ~/.dotfiles/ranger/scope.sh ~/.config/ranger/
+chmod +x ~/.config/ranger/scope.sh
 
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
