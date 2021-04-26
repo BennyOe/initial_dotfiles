@@ -25,7 +25,7 @@ xcape -e 'Control_L=Escape' &
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # mount 
-#mount /dev/sda1 ~/Daten
+#sudo mount /dev/sda1 ~/Daten
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
