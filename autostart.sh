@@ -1,11 +1,12 @@
-xrandr -s 1920x1080
-#xrandr --output eDP1 --scale 0.7
+xrandr -s 2736x1824
+xrandr --output eDP1 --scale 0.65
 autorandr --change
 dwmblocks & 
 nitrogen --restore &
 picom &
 redshift &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
+
 # systray applets
 nm-applet & 
 pa-applet &
@@ -24,7 +25,7 @@ xcape -e 'Control_L=Escape' &
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # mount 
-#mount /dev/sda1 ~/Daten
+sudo mount /dev/sda1 ~/Daten
 
 # mouse acceleration
-#xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
+xinput --set-prop 10 'libinput Accel Speed' 0.8

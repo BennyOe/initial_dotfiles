@@ -1,6 +1,0 @@
-#!/bin/bash
-
-setxkbmap de
-xmodmap ~/.Xmodmap
-nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpaper/0257.jpg
-multilockscreen -u /usr/share/backgrounds/druhwald.JPG

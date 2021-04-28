@@ -17,6 +17,7 @@ export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #################
 
@@ -121,3 +122,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
