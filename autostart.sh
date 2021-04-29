@@ -6,6 +6,7 @@ nitrogen --restore &
 picom &
 redshift &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
+
 # systray applets
 nm-applet & 
 pa-applet &
@@ -22,9 +23,6 @@ xcape -e 'Control_L=Escape' &
 
 #start polkit agent
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-# mount 
-#mount /dev/sda1 ~/Daten
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
