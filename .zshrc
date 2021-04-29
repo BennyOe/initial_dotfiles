@@ -101,9 +101,18 @@ yay() {
 }
 #function to safely remove my hdd
 removeHDD() {
-  udisksctl unmount -b /dev/sdb1
-  udisksctl unmount -b /dev/sdb2
-  udisksctl power-off -b /dev/sdb
+    udisksctl unmount -b /dev/sdb1
+    udisksctl unmount -b /dev/sdb2
+    udisksctl power-off -b /dev/sdb
+}
+
+#function to add, commit and push changes to dotfiles from anywhere
+dotc() {
+    cd ~/.dotfiles
+    gall
+    gac
+    gp
+    cd -
 }
 
 # >>> conda initialize >>>

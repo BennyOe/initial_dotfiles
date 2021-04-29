@@ -17,6 +17,8 @@
         "markdown",
         "ruby",
         "clang",
+        "erlang",
+        "sh",
         "python"
     ],
     "solargraph.hover": true,

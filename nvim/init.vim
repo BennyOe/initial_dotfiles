@@ -41,6 +41,8 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'rhysd/vim-grammarous'
   "Treesitter for better syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  "Shortcut helper
+  Plug 'folke/which-key.nvim'
 call plug#end()
 
 "" Neovim config
@@ -137,7 +139,7 @@ augroup END
 
 "" Theme settings
 if (has("termguicolors"))
-   set termguicolors
+  set termguicolors
 endif
 set background=dark
 let g:onedark_hide_endofbuffer = 1
@@ -237,6 +239,7 @@ let g:coc_global_extensions = [
       \ 'coc-tabnine',
       \ 'coc-tsserver', 
       \ 'coc-vimtex', 
+      \ 'coc-sh', 
       \ 'coc-word']
 " " To go back to previous state use Ctrl+O
 nmap <silent><leader>gd <Plug>(coc-definition)
@@ -332,4 +335,11 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+EOF
+"" Whichkey
+set timeoutlen=500
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here TODO
+  }
 EOF
