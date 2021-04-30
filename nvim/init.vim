@@ -42,7 +42,7 @@ call plug#begin("~/.config/nvim/plugged")
   "Treesitter for better syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   "Shortcut helper
-  Plug 'folke/which-key.nvim'
+  "Plug 'folke/which-key.nvim'
 call plug#end()
 
 "" Neovim config
@@ -89,7 +89,7 @@ map <leader>n :noh<CR>
 " Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
-nnoremap <leader>ts :belowright 12split<CR> :term<CR> 
+nnoremap <leader>ts :belowright 12split <bar> term<CR> 
 " close panels
 nnoremap <leader>x <C-w>c
 " Line moving
@@ -338,8 +338,8 @@ require'nvim-treesitter.configs'.setup {
 EOF
 "" Whichkey
 set timeoutlen=500
-lua << EOF
-  require("which-key").setup {
-    -- your configuration comes here TODO
-  }
-EOF
+"lua << EOF
+  "require("which-key").setup {
+    "-- your configuration comes here TODO
+  "}
+"EOF
