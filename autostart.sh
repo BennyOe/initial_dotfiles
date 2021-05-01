@@ -13,16 +13,19 @@ pa-applet &
 blueman-applet &
 
 # set the delay time for the keyboard
-xset r rate 200 30 &
+xset r rate 200 30
 
 # set numblock on
-numlockx on &
+numlockx on
 
 # map lctrl to escape
-xcape -e 'Control_L=Escape' &
+xcape -e 'Control_L=Escape'
 
 #start polkit agent
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# libinput gestures
+libinput-gestures-setup start
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
