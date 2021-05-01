@@ -30,10 +30,10 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.previewAction.onHover": false,
     "clangd.path": "/home/paul/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
-    "languageserver": {
-        "erlang": {
-          "command": "erlang_ls",
-          "filetypes": ["erlang"]
-        }
-      }
+    //"languageserver": {
+        //"erlang": {
+          //"command": "erlang_ls",
+           //"filetypes": ["erlang"]
+        //}
+    //}
 }

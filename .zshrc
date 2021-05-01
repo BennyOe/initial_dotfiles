@@ -115,6 +115,10 @@ dotc() {
     cd -
 }
 
+################
+#language stuff#
+################
+
 # >>> conda initialize >>>
 #!! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/paul/.applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -124,9 +128,11 @@ else
     if [ -f "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$PATH:/home/paul/.applications/anaconda3/bin"
+        export PATH="/home/paul/.applications/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# enable history support in erlang
+export ERL_AFLAGS="-kernel shell_history enabled"
