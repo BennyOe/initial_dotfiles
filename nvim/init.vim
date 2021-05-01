@@ -144,6 +144,8 @@ endif
 set background=dark
 let g:onedark_hide_endofbuffer = 1
 colorscheme onedark
+autocmd ColorScheme * highlight CocHighlightText     ctermfg=LightMagenta    guifg=LightMagenta
+
 " RainbowBrackets config
 let g:rainbow_active = 1
 let g:rainbow_conf = {
