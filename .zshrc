@@ -75,7 +75,7 @@ alias zshrc='vim ~/.zshrc'
 alias picomrc="vim ~/.config/picom/picom.conf"
 
 # git aliases
-alias gac='git add -A && git commit -a'
+alias gac='git add . && git commit -a'
 alias gst='git status'
 alias gpu='git push'
 alias gall='git add .'
