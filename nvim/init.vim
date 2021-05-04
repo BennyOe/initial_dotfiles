@@ -365,4 +365,5 @@ let g:indentLine_char = '│'
 let g:indent_blankline_show_first_indent_level = v:false
 let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
 let g:indent_blankline_show_current_context = v:true
-let g:indent_blankline_context_patterns = ['class', 'function', 'method','^if']
+let g:indent_blankline_context_patterns = ['class', 'function', 'method', '^if', '^case', '^while', '^for']
+let g:indent_blankline_show_trailing_blankline_indent = v:false
