@@ -132,3 +132,5 @@ unset __conda_setup
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# enable history support in erlang
+export ERL_AFLAGS="-kernel shell_history enabled"
