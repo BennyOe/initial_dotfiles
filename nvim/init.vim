@@ -41,6 +41,10 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'rhysd/vim-grammarous'
   "Treesitter for better syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  "Shortcut helper
+  "Plug 'folke/which-key.nvim'
+  "Indent guides
+  Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 call plug#end()
 
 "" Neovim config
@@ -87,7 +91,7 @@ map <leader>n :noh<CR>
 " Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
-nnoremap <leader>ts :belowright 12split<CR> :term<CR> 
+nnoremap <leader>ts :belowright 12split <bar> term<CR> 
 " close panels
 nnoremap <leader>x <C-w>c
 " Line moving
@@ -119,9 +123,9 @@ nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " jk to esc
-inoremap jk <Esc>
-inoremap jj <Esc>
-inoremap kj <Esc>
+"inoremap jk <Esc>
+"inoremap jj <Esc>
+"inoremap kj <Esc>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -137,11 +141,13 @@ augroup END
 
 "" Theme settings
 if (has("termguicolors"))
-   set termguicolors
+  set termguicolors
 endif
 set background=dark
 let g:onedark_hide_endofbuffer = 1
 colorscheme onedark
+highlight CocHighlightText ctermfg=LightMagenta guifg=LightMagenta
+
 " RainbowBrackets config
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -237,6 +243,7 @@ let g:coc_global_extensions = [
       \ 'coc-tabnine',
       \ 'coc-tsserver', 
       \ 'coc-vimtex', 
+      \ 'coc-sh', 
       \ 'coc-word']
 " " To go back to previous state use Ctrl+O
 nmap <silent><leader>gd <Plug>(coc-definition)
@@ -314,6 +321,19 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " " Add (Neo)Vim's native statusline support.
 " " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " " provide custom statusline: lightline.vim, vim-airline.
@@ -333,3 +353,16 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
+"" Whichkey
+set timeoutlen=500
+"lua << EOF
+  "require("which-key").setup {
+    "-- your configuration comes here TODO
+  "}
+"EOF
+"" Indent Line
+let g:indentLine_char = '│'
+let g:indent_blankline_show_first_indent_level = v:false
+let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_context_patterns = ['class', 'function', 'method','^if']
