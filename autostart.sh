@@ -27,5 +27,8 @@ xcape -e 'Control_L=Escape'
 # libinput gestures
 libinput-gestures-setup start
 
+# thunar daemon for mounting drives
+thunar --daemon &
+
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>

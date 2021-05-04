@@ -43,6 +43,8 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   "Shortcut helper
   "Plug 'folke/which-key.nvim'
+  "Indent guides
+  Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 call plug#end()
 
 "" Neovim config
@@ -144,7 +146,7 @@ endif
 set background=dark
 let g:onedark_hide_endofbuffer = 1
 colorscheme onedark
-autocmd ColorScheme * highlight CocHighlightText     ctermfg=LightMagenta    guifg=LightMagenta
+highlight CocHighlightText ctermfg=LightMagenta guifg=LightMagenta
 
 " RainbowBrackets config
 let g:rainbow_active = 1
@@ -358,3 +360,9 @@ set timeoutlen=500
     "-- your configuration comes here TODO
   "}
 "EOF
+"" Indent Line
+let g:indentLine_char = '│'
+let g:indent_blankline_show_first_indent_level = v:false
+let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_context_patterns = ['class', 'function', 'method','^if']
