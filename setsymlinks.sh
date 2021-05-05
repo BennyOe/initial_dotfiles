@@ -56,10 +56,16 @@ ln -sv ~/.dotfiles/scripts/dekeys ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/dekeys
 ln -sv ~/.dotfiles/scripts/enkeys ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/enkeys
+ln -sv ~/.dotfiles/scripts/spotifyChangeSong.sh ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/spotifyChangeSong.sh
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
+
+rm -rf ~/.config/spotifyd
+mkdir ~/.config/spotifyd
+ln -sv ~/.dotfiles/spotifyd.conf ~/.config/spotifyd
 
 #rm -rf ~/.config/autorandr/
 #ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
