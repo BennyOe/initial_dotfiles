@@ -63,6 +63,9 @@ rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
 
+rm -rf ~/.config/spotifyd
+mkdir ~/.config/spotifyd
+ln -sv ~/.dotfiles/spotifyd.conf ~/.config/spotifyd
 #rm -rf ~/.config/autorandr/
 #ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
 #chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
