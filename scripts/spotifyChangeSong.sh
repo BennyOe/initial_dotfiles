@@ -3,5 +3,4 @@ song=$(playerctl metadata --format "{{ artUrl }}\nTitle: {{ title }}\nArtist: {{
 cover=$(playerctl metadata  | awk '/artUrl/ {print $3}')
 rm ~/.cache/cover.jpg
 curl $cover >> ~/.cache/cover.jpg
-sleep 1
 notify-send "Spotify" "$song" --icon=~/.cache/cover.jpg
