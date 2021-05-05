@@ -29,3 +29,6 @@ xcape -e 'Control_L=Escape' &
 
 # spotify
 spotifyd --no-daemon &
+
+# thunar daemon for mounting drives
+thunar --daemon &
