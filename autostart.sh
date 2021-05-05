@@ -29,3 +29,7 @@ sudo mount /dev/sda1 ~/Daten
 
 # mouse acceleration
 xinput --set-prop 10 'libinput Accel Speed' 0.8
+xinput --set-prop 9 'libinput Accel Speed' 0.8
+
+
+spotifyd --no-daemon &

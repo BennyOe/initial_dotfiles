@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ ! $(pgrep "spotifyd") ]; then
-  spotifyd
+  spotifyd --no-daemon &
 fi
 killall spotifyd
-spotifyd
+spotifyd --no-daemon &
 spt
