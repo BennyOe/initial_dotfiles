@@ -1,6 +1,6 @@
 xrandr -s 1920x1080
 #xrandr --output eDP1 --scale 0.7
-autorandr --change
+autorandr --change 
 dwmblocks & 
 nitrogen --restore &
 picom &
