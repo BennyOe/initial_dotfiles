@@ -26,3 +26,6 @@ xcape -e 'Control_L=Escape' &
 
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
+
+# spotify
+spotifyd --no-daemon &
