@@ -45,6 +45,8 @@ call plug#begin("~/.config/nvim/plugged")
   "Plug 'folke/which-key.nvim'
   "Indent guides
   Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+  "lazygit plugin
+  Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 "" Neovim config
@@ -67,7 +69,7 @@ set smartindent " set smart indentation
 set ignorecase "set search to case insensitive
 set smartcase " set to be case sensitive when there is capital letter, this needs set incsearch to work
 set incsearch " for smartcase
-set hidden " sp multiple buffers can be open
+set hidden " so multiple buffers can be open
 set updatetime=250 " update faster for autocompletion
 set shortmess+=c " for CoC plugin
 set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
@@ -111,7 +113,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 " make esc exit from the terminal in vim
-tnoremap <Esc> <C-\><C-n>
+tnoremap <leader><Esc> <C-\><C-n>
 " navigate quickfix
 nnoremap <leader><leader>j :cn<CR>
 nnoremap <leader><leader>k :cp<CR>
@@ -122,10 +124,8 @@ nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" jk to esc
-"inoremap jk <Esc>
-"inoremap jj <Esc>
-"inoremap kj <Esc>
+" open Lazygit window
+nnoremap <silent> <leader>g :LazyGit<CR>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -363,7 +363,8 @@ set timeoutlen=500
 "" Indent Line
 let g:indentLine_char = '│'
 let g:indent_blankline_show_first_indent_level = v:false
-let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
+let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer', 'startify']
 let g:indent_blankline_show_current_context = v:true
 let g:indent_blankline_context_patterns = ['class', 'function', 'method', '^if', '^case', '^while', '^for']
 let g:indent_blankline_show_trailing_blankline_indent = v:false
+

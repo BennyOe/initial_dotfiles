@@ -81,6 +81,7 @@ alias gpu='git push'
 alias gall='git add .'
 alias gpl='git pull'
 alias gck='git checkout'
+alias lg='lazygit'
 
 # alias to quickly get class of window
 alias wmclass='xprop _NET_WM_PID WM_CLASS'
@@ -136,3 +137,5 @@ unset __conda_setup
 
 # enable history support in erlang
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
