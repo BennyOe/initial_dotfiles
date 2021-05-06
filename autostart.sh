@@ -27,8 +27,11 @@ xcape -e 'Control_L=Escape' &
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>
 
-# spotify
-spotifyd --no-daemon &
-
 # thunar daemon for mounting drives
 thunar --daemon &
+
+# spotify
+if ! pgrep -x "spotifyd" > /dev/null                                                                                                                                                          INT ✘  
+then
+    spotifyd --no-daemon &
+fi

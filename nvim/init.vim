@@ -45,6 +45,8 @@ call plug#begin("~/.config/nvim/plugged")
   "Plug 'folke/which-key.nvim'
   "Indent guides
   Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+  "lazygit plugin
+  Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 "" Neovim config
@@ -111,7 +113,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 " make esc exit from the terminal in vim
-tnoremap <Esc> <C-\><C-n>
+tnoremap <leader> <Esc> <C-\><C-n>
 " navigate quickfix
 nnoremap <leader><leader>j :cn<CR>
 nnoremap <leader><leader>k :cp<CR>
@@ -126,6 +128,8 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 "inoremap jk <Esc>
 "inoremap jj <Esc>
 "inoremap kj <Esc>
+" open Lazygit window
+nnoremap <silent> <leader>g :LazyGit<CR>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
