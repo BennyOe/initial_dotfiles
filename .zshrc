@@ -82,6 +82,7 @@ alias gpu='git push'
 alias gall='git add .'
 alias gpl='git pull'
 alias gck='git checkout'
+alias lg='lazygit'
 
 # alias to quickly get class of window
 alias wmclass='xprop _NET_WM_PID WM_CLASS'
