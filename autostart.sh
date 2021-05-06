@@ -31,7 +31,10 @@ xcape -e 'Control_L=Escape' &
 thunar --daemon &
 
 # spotify
-if ! pgrep -x "spotifyd" > /dev/null                                                                                                                                                          INT ✘  
-then
-    spotifyd --no-daemon &
-fi
+#if ! pgrep -x "spotifyd" > /dev/null
+#then
+    #spotifyd --no-daemon &
+    #sleep 1
+#fi
+sleep 2
+spotifyd --no-daemon &
