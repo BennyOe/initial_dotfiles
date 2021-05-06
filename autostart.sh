@@ -35,7 +35,9 @@ xinput --set-prop 9 'libinput Accel Speed' 0.8
 thunar --daemon &
 
 # spotify
-if ! pgrep -x "spotifyd" > /dev/null                                                                                                                                                          INT ✘  
-then
-    spotifyd --no-daemon &
-fi
+#if ! pgrep -x "spotifyd" > /dev/null                                                                                                                                                          INT ✘  
+#then
+#    spotifyd --no-daemon &
+#fi
+sleep 2
+spotifyd --no-daemon &
