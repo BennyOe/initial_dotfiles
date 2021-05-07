@@ -4,7 +4,7 @@ autorandr --change
 dwmblocks & 
 nitrogen --restore &
 picom &
-redshift &
+redshift-gtk -l 53.55:09.99 &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
 
 # systray applets

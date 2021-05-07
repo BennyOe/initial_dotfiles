@@ -68,6 +68,7 @@ alias oldvim='\vim'
 alias lsl='lsd -a'
 alias ls='lsd'
 alias lsla='lsd -la'
+alias lsld='ls -d */'
 
 #alias for faster *rc editing
 alias vimrc='vim ~/.config/nvim/init.vim'
