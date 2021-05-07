@@ -58,6 +58,10 @@ ln -sv ~/.dotfiles/scripts/enkeys ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/enkeys
 ln -sv ~/.dotfiles/scripts/spotifyChangeSong.sh ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/spotifyChangeSong.sh
+ln -sv ~/.dotfiles/scripts/volume.sh ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/volume.sh
+ln -sv ~/.dotfiles/scripts/brightness.sh ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/brightness.sh
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
