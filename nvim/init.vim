@@ -88,6 +88,11 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+" Split resizing
+nnoremap <C-Right> <C-w>>
+nnoremap <C-Left> <C-w><
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
 " remove seach highlighting
 map <leader>n :noh<CR>
 " Split panel
