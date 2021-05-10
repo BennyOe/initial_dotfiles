@@ -95,6 +95,9 @@ alias size='sudo du -shc '
 # ranger
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
+# anaconda
+alias startconda='source /opt/anaconda/bin/activate root'
+
 # yay refresh dwmblocks
 yay() {
 	/usr/bin/yay "$@"
