@@ -86,6 +86,11 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+" Split resizing
+nnoremap <C-Right> <C-w>>
+nnoremap <C-Left> <C-w><
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
 " remove seach highlighting
 map <leader>n :noh<CR>
 " Split panel
@@ -122,9 +127,8 @@ nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" jk to esc
-"inoremap jk <Esc>
-"inoremap jj <Esc>
+" open Lazygit window
+nnoremap <silent> <leader>g :LazyGit<CR>
 "inoremap kj <Esc>
 "" Autocommands
 " make F5 run current buffer
