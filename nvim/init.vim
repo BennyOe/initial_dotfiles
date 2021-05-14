@@ -119,6 +119,8 @@ vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 " make esc exit from the terminal in vim
 tnoremap <leader> <Esc> <C-\><C-n>
+"open terminal
+nnoremap <leader>t :term<CR>
 " navigate quickfix
 nnoremap <leader><leader>j :cn<CR>
 nnoremap <leader><leader>k :cp<CR>
