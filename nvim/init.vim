@@ -344,7 +344,7 @@ endfunction
 " " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Startify setup
-let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}, {'i': '~/.i3/config'}]
+let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}]
 "" Treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
