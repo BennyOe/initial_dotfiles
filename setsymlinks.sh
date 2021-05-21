@@ -64,6 +64,8 @@ ln -sv ~/.dotfiles/scripts/brightness.sh ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/brightness.sh
 ln -sv ~/.dotfiles/scripts/dwmnet ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/dwmnet
+ln -sv ~/.dotfiles/scripts/battery ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/battery
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
