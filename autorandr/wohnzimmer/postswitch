@@ -1,0 +1,6 @@
+#!/bin/bash
+# set the delay time for the keyboard
+xset r rate 200 30 
+nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpaper/0257.jpg
+nitrogen --head=1 --set-zoom-fill ~/Pictures/Wallpaper/0257.jpg
+multilockscreen -u ~/Pictures/Wallpaper/0257.jpg
