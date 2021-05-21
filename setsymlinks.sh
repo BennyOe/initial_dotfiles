@@ -62,6 +62,8 @@ ln -sv ~/.dotfiles/scripts/volume.sh ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/volume.sh
 ln -sv ~/.dotfiles/scripts/brightness.sh ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/brightness.sh
+ln -sv ~/.dotfiles/scripts/dwmnet ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/dwmnet
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
