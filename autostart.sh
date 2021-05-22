@@ -1,10 +1,8 @@
-xrandr -s 1920x1080
+#xrandr -s 1920x1080
 #xrandr --output eDP1 --scale 0.7
-autorandr --change 
+autorandr --change
 dwmblocks & 
-nitrogen --restore &
 picom &
-redshift &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
 
 # systray applets
@@ -30,5 +28,6 @@ libinput-gestures-setup start
 # thunar daemon for mounting drives
 thunar --daemon &
 
+#redshift -c ~/.config/redshift/redshift.conf &
 # mouse acceleration
 #xinput --set-prop <device id> 'libinput Accel Speed' <acceleration factor>

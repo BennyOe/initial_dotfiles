@@ -116,11 +116,6 @@ dotc() {
     cd -
 }
 
-# fh - repeat history with fuzzy find
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
-}
-
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
     local pid 
