@@ -7,19 +7,11 @@ for battery in /sys/class/power_supply/BAT?*; do
     if [[ $power = "Charging" ]]; then
         status=" "
         #dunstify -u low -r 15 -t 5000 "$status Charging..."
-        if [[ $capacity > "80" ]]; then
-            printf "^c#61afef^%s^c#abb2bf^%d%%" "$status" "$capacity"
-        elif [[ $capacity > "60" ]]; then
-            printf "^c#61afef^%s^c#abb2bf^%d%%" "$status" "$capacity"
-        elif [[ $capacity > "40" ]]; then
-            printf "^c#61afef^%s^c#abb2bf^%d%%" "$status" "$capacity"
-        elif [[ $capacity > "20" ]]; then
-            printf "^c#61afef^%s^c#abb2bf^%d%%" "$status" "$capacity"
-        elif [[ $capacity < "20" ]]; then
-            printf "^c#e06c75^%s^c#abb2bf^%d%%" "$status" "$capacity"
-        fi
+        printf "^c#e5c07b^%s^c#abb2bf^%d%%" "$status" "$capacity"
     else
-        if [[ $capacity > "80" ]]; then
+        if [[ $capacity = "100" ]]; then
+            printf "^c#61afef^ ^c#abb2bf^%d%%" "$capacity"
+        elif [[ $capacity > "80" ]]; then
             printf "^c#61afef^ ^c#abb2bf^%d%%" "$capacity"
         elif [[ $capacity > "60" ]]; then
             printf "^c#61afef^ ^c#abb2bf^%d%%" "$capacity"
@@ -27,7 +19,7 @@ for battery in /sys/class/power_supply/BAT?*; do
             printf "^c#61afef^ ^c#abb2bf^%d%%" "$capacity"
         elif [[ $capacity > "20" ]]; then
             printf "^c#61afef^ ^c#abb2bf^%d%%" "$capacity"
-        elif [[ $capacity < "20" ]]; then
+        else
             printf "^c#e06c75^ ^c#abb2bf^%d%%" "$capacity"
         fi
     fi
