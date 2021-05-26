@@ -117,6 +117,8 @@ nnoremap <leader>p "+p
 " " in visual mode
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
+" " fix indentaion
+nnoremap <leader>i gg=G<C-o>
 " make esc exit from the terminal in vim
 tnoremap <leader><Esc> <C-\><C-n>
 " navigate quickfix
