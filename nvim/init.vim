@@ -45,6 +45,14 @@ call plug#begin("~/.config/nvim/plugged")
   "Plug 'folke/which-key.nvim'
   "Indent guides
   Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+  "git plugin
+  Plug 'kdheepak/lazygit.nvim'
+  " FZF alternative
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  " Whichkey shortcut helper
+  Plug 'folke/which-key.nvim'
 call plug#end()
 
 "" Neovim config
@@ -373,3 +381,23 @@ let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
 let g:indent_blankline_show_current_context = v:true
 let g:indent_blankline_context_patterns = ['class', 'function', 'method', '^if', '^case', '^while', '^for']
 let g:indent_blankline_show_trailing_blankline_indent = v:false
+
+"" Telescope"
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fs <cmd>Telescope search_history<cr>
+nnoremap <leader>fc <cmd>Telescope command_history<cr>
+nnoremap <leader>fq <cmd>Telescope quickfix<cr>
+nnoremap <leader>fr <cmd>Telescope registers<cr>
+nnoremap <leader>fa <cmd>Telescope spell_suggest<cr>
+"" Whickkey
+set timeoutlen=500
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
