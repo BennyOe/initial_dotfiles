@@ -1,4 +1,5 @@
 {
+    "coc.preferences.useQuickfixForLocations": true,
     "python.jediEnabled": false,
     "eslint.nodePath": "/home/paul/.config/yarn/global/node_modules",
     "tsserver.npm": "/usr/bin/npm",
@@ -30,10 +31,4 @@
     "explorer.icon.enableNerdfont": true,
     "explorer.previewAction.onHover": false,
     "clangd.path": "/home/paul/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
-    //"languageserver": {
-        //"erlang": {
-          //"command": "erlang_ls",
-           //"filetypes": ["erlang"]
-        //}
-    //}
 }

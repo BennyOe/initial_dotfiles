@@ -37,56 +37,56 @@ set undodir=~/.vim/undodir
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
 
-" Add plugins here
-" Track the engine.
-Plugin 'SirVer/ultisnips'
+"" Add plugins here
+"" Track the engine.
+"Plugin 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+"" Snippets are separated from the engine. Add this if you want them:
+"Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<s-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<s-tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-"continous compiling
-let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_quickfix=2
-Plugin 'preservim/nerdtree'
-Plugin 'miyakogi/conoline.vim'
-Plugin 'mboughaba/i3config.vim'
-Plugin 'arcticicestudio/nord-vim'
-call vundle#end()
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
+""continous compiling
+"let g:LatexBox_latexmk_preview_continuously=1
+"let g:LatexBox_quickfix=2
+"Plugin 'preservim/nerdtree'
+"Plugin 'miyakogi/conoline.vim'
+"Plugin 'mboughaba/i3config.vim'
+"Plugin 'arcticicestudio/nord-vim'
+"call vundle#end()
 
-filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete
-"nerdtree mapping
-map <C-n> :NERDTreeToggle<CR>
-"nerdtree LineNumbers
-let NERDTreeShowLineNumbers=1
-"-----------------------------------------------------------------------
-"Statusline
-"colors
-hi Base guibg=#212333 guifg=#212333
-hi Mode guibg=#82aaff guifg=#181824 gui=bold
-hi Filetype guibg=#292d3e guifg=#929dcb
-hi LineCol guibg=#82aaff guifg=#181824 gui=bold
+"filetype plugin indent on
+"set omnifunc=syntaxcomplete#Complete
+""nerdtree mapping
+"map <C-n> :NERDTreeToggle<CR>
+""nerdtree LineNumbers
+"let NERDTreeShowLineNumbers=1
+""-----------------------------------------------------------------------
+""Statusline
+""colors
+"hi Base guibg=#212333 guifg=#212333
+"hi Mode guibg=#82aaff guifg=#181824 gui=bold
+"hi Filetype guibg=#292d3e guifg=#929dcb
+"hi LineCol guibg=#82aaff guifg=#181824 gui=bold
 
-"set Nord Theme
-augroup nord-overrides
-  autocmd!
-  autocmd ColorScheme nord highlight Comment ctermfg=14
-  autocmd ColorScheme nord highlight Visual cterm=bold ctermbg=8 ctermfg=none
-augroup END
-colorscheme nord
+""set Nord Theme
+"augroup nord-overrides
+  "autocmd!
+  "autocmd ColorScheme nord highlight Comment ctermfg=14
+  "autocmd ColorScheme nord highlight Visual cterm=bold ctermbg=8 ctermfg=none
+"augroup END
+"colorscheme nord
 "mode getter
   let g:currentmode={
       \'n' : 'Normal ',

@@ -17,6 +17,7 @@ export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
+export DIFFPROG="nvim -d $1"
 
 #################
 

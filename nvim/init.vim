@@ -51,6 +51,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " Whichkey shortcut helper
 Plug 'folke/which-key.nvim'
+" Swap parameters
+Plug 'mizlan/iswap.nvim'
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 "" Neovim config
@@ -65,6 +69,7 @@ set nolist " so softwrapping works
 set tabstop=4 softtabstop=4 " set tab size
 set shiftwidth=4 " affect amount of indentation
 set expandtab " set that tab will insert softabstop amount of space characters
+set mouse=a " enable clicking with the mouse
 set nowritebackup " set to never save backup                                 
 set noswapfile " set no swap file 
 set nobackup " set no backup file
@@ -130,6 +135,8 @@ nnoremap <leader><leader>j :cn<CR>
 nnoremap <leader><leader>k :cp<CR>
 nnoremap <leader><leader>q :copen<CR>
 nnoremap <leader><leader>l :.cc<CR>
+" Markdown Preview control
+nmap <leader>m <Plug>MarkdownPreview
 " map spelling 
 nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
