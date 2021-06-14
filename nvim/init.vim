@@ -146,6 +146,8 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " open Lazygit window
 nnoremap <silent> <leader>g :LazyGit<CR>
 nnoremap <leader>s :ISwap<CR>
+" switch between the last two files with bs
+nnoremap <BS> <C-^>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
