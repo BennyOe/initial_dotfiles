@@ -1,60 +1,61 @@
 " Plugins
 call plug#begin("~/.config/nvim/plugged")
-
-" Plugin Section
-"colorschemes
-Plug 'joshdick/onedark.vim'
-"Fuzzy Search 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-"Statusline
-Plug 'itchyny/lightline.vim'
-"intellisense and autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
-" snippets
-Plug 'honza/vim-snippets'
-""undoTree
-Plug 'mbbill/undotree'
-"css colors
-Plug 'ap/vim-css-color'
-"i3config colors
-Plug 'mboughaba/i3config.vim'
-"code commenting
-Plug 'preservim/nerdcommenter'
-"git from vim
-Plug 'tpope/vim-fugitive'
-"PLugin to autoclose brackets
-Plug 'jiangmiao/auto-pairs'
-"Plugin to wrap text
-Plug 'tpope/vim-surround'
-"Plugin for icons
-Plug 'ryanoasis/vim-devicons'
-"Plugin for startup screen
-Plug 'mhinz/vim-startify'
-"Plugins for latex
-Plug 'lervag/vimtex'
-"Rainbow colored brackets and csv
-Plug 'luochen1990/rainbow'
-"Grammar checker
-Plug 'rhysd/vim-grammarous'
-"Treesitter for better syntax highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Indent guides
-Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
-"lazygit plugin
-Plug 'kdheepak/lazygit.nvim'
-" FZF alternative
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-" Whichkey shortcut helper
-Plug 'folke/which-key.nvim'
-" Swap parameters
-Plug 'mizlan/iswap.nvim'
-" Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    " Plugin Section
+    "colorschemes
+    Plug 'joshdick/onedark.vim'
+    "Fuzzy Search 
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    "Statusline
+    Plug 'itchyny/lightline.vim'
+    "intellisense and autocompletion
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'w0rp/ale'
+    Plug 'sheerun/vim-polyglot'
+    " snippets
+    Plug 'honza/vim-snippets'
+    ""undoTree
+    Plug 'mbbill/undotree'
+    "css colors
+    Plug 'ap/vim-css-color'
+    "i3config colors
+    Plug 'mboughaba/i3config.vim'
+    "code commenting
+    Plug 'preservim/nerdcommenter'
+    "git from vim
+    Plug 'tpope/vim-fugitive'
+    "PLugin to autoclose brackets
+    Plug 'jiangmiao/auto-pairs'
+    "Plugin to wrap text
+    Plug 'tpope/vim-surround'
+    "Plugin for icons
+    Plug 'ryanoasis/vim-devicons'
+    "Plugin for startup screen
+    Plug 'mhinz/vim-startify'
+    "Plugins for latex
+    Plug 'lervag/vimtex'
+    "Rainbow colored brackets and csv
+    Plug 'luochen1990/rainbow'
+    "Grammar checker
+    Plug 'rhysd/vim-grammarous'
+    "Treesitter for better syntax highlighting
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    "Indent guides
+    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+    "lazygit plugin
+    Plug 'kdheepak/lazygit.nvim'
+    " FZF alternative
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    " Whichkey shortcut helper
+    Plug 'folke/which-key.nvim'
+    " Swap parameters
+    Plug 'mizlan/iswap.nvim'
+    " Markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    " set the pwd to project root
+    Plug 'airblade/vim-rooter'
 call plug#end()
 
 "" Neovim config
@@ -106,7 +107,7 @@ nnoremap <C-Down> <C-w>-
 map <leader>n :noh<CR>
 " Split panel
 nnoremap <leader>v <C-w>v
-nnoremap <leader>s <C-w>s
+nnoremap <leader>ws <C-w>s
 nnoremap <leader>ts :belowright 12split <bar> term<CR> 
 " close panels
 nnoremap <leader>x <C-w>c
@@ -144,6 +145,7 @@ nnoremap <F9>  :set nospell <return>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " open Lazygit window
 nnoremap <silent> <leader>g :LazyGit<CR>
+nnoremap <leader>s :ISwap<CR>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -156,6 +158,8 @@ augroup remember_folds
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup END
+" open vim on cwd of file
+autocmd BufEnter * silent! lcd %:p:h
 
 "" Theme settings
 if (has("termguicolors"))
