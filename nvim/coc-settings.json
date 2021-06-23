@@ -30,5 +30,5 @@
     "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 2]  [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5]",
     "explorer.icon.enableNerdfont": true,
     "explorer.previewAction.onHover": false,
-    "clangd.path": "/home/paul/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+    "clangd.path": "/home/paul/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

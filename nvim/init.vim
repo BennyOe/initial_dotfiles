@@ -3,7 +3,7 @@ call plug#begin("~/.config/nvim/plugged")
     " Plugin Section
     "colorschemes
     Plug 'joshdick/onedark.vim'
-    "Fuzzy Search 
+    "Fuzzy Search
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     "Statusline
@@ -11,15 +11,13 @@ call plug#begin("~/.config/nvim/plugged")
     "intellisense and autocompletion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
-    Plug 'sheerun/vim-polyglot'
+    "Plug 'sheerun/vim-polyglot' " TODO: check if needed "
     " snippets
     Plug 'honza/vim-snippets'
     ""undoTree
     Plug 'mbbill/undotree'
     "css colors
     Plug 'ap/vim-css-color'
-    "i3config colors
-    Plug 'mboughaba/i3config.vim'
     "code commenting
     Plug 'preservim/nerdcommenter'
     "git from vim
@@ -71,10 +69,10 @@ set tabstop=4 softtabstop=4 " set tab size
 set shiftwidth=4 " affect amount of indentation
 set expandtab " set that tab will insert softabstop amount of space characters
 set mouse=a " enable clicking with the mouse
-set nowritebackup " set to never save backup                                 
-set noswapfile " set no swap file 
+set nowritebackup " set to never save backup
+set noswapfile " set no swap file
 set nobackup " set no backup file
-set breakindent " set every wrapped line will continue visually indented                    
+set breakindent " set every wrapped line will continue visually indented
 set smartindent " set smart indentation
 set ignorecase "set search to case insensitive
 set smartcase " set to be case sensitive when there is capital letter, this needs set incsearch to work
@@ -84,9 +82,11 @@ set updatetime=250 " update faster for autocompletion
 set shortmess+=c " for CoC plugin
 set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
 set spellsuggest=fast,10
+set splitbelow " splits open below an to the right
+set splitright
+set dictionary+=/usr/share/dict/german " set the german dictionary
 " set leader to space
 let mapleader=" "
-
 "" Keymaps
 " use ; instead of :
 nnoremap ; :
@@ -98,6 +98,10 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+map <leader>H :wincmd H<CR>
+map <leader>J :wincmd J<CR>
+map <leader>K :wincmd K<CR>
+map <leader>L :wincmd L<CR>
 " Split resizing
 nnoremap <C-Right> <C-w>>
 nnoremap <C-Left> <C-w><
@@ -108,7 +112,7 @@ map <leader>n :noh<CR>
 " Split panel
 nnoremap <leader>v <C-w>v
 nnoremap <leader>ws <C-w>s
-nnoremap <leader>ts :belowright 12split <bar> term<CR> 
+nnoremap <leader>ts :belowright 12split <bar> term<CR>
 " close panels
 nnoremap <leader>x <C-w>c
 " Line moving
@@ -127,6 +131,8 @@ nnoremap <leader>p "+p
 " " in visual mode
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
+" paste with correct indent
+:nnoremap p ]p
 " " fix indentaion
 nnoremap <leader>i gg=G<C-o>
 " make esc exit from the terminal in vim
@@ -138,7 +144,7 @@ nnoremap <leader><leader>q :copen<CR>
 nnoremap <leader><leader>l :.cc<CR>
 " Markdown Preview control
 nmap <leader>m <Plug>MarkdownPreview
-" map spelling 
+" map spelling
 nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
@@ -187,7 +193,7 @@ let g:rainbow_conf = {
             \			'parentheses_options': 'containedin=markdownCode contained',
             \		},
             \		'lisp': {
-            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], 
+            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
             \		},
             \		'haskell': {
             \			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
@@ -242,8 +248,9 @@ let g:lightline = {
 "CoC and ALE config
 " ALE (Asynchronous Lint Engine)
 let g:ale_fixers = {
+            \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ 'javascript': ['prettier','eslint'],
-            \ 'tex': ['latexindent'],
+            \ 'tex': ['latexindent', 'remove_trailing_lines', 'trim_whitespace'],
             \ }
 let g:ale_sign_error = ''
 let g:ale_sign_warning = '⚠️'
@@ -253,21 +260,22 @@ let g:ale_fix_on_save = 1
 " " COC extension
 let g:coc_user_config = {}
 let g:coc_global_extensions = [
-            \ 'coc-clangd', 
-            \ 'coc-css', 
+            \ 'coc-clangd',
+            \ 'coc-css',
             \ 'coc-eslint',
             \ 'coc-explorer',
-            \ 'coc-html', 
-            \ 'coc-java', 
-            \ 'coc-json', 
-            \ 'coc-prettier', 
+            \ 'coc-html',
+            \ 'coc-java',
+            \ 'coc-json',
+            \ 'coc-prettier',
             \ 'coc-python',
-            \ 'coc-snippets', 
+            \ 'coc-snippets',
             \ 'coc-solargraph',
             \ 'coc-tabnine',
-            \ 'coc-tsserver', 
-            \ 'coc-vimtex', 
-            \ 'coc-sh', 
+            \ 'coc-tsserver',
+            \ 'coc-vimtex',
+            \ 'coc-dictionary',
+            \ 'coc-sh',
             \ 'coc-word']
 " " To go back to previous state use Ctrl+O
 nmap <silent><leader>gd <Plug>(coc-definition)
@@ -297,7 +305,7 @@ else
 endif
 
 " " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh() 
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " " position. Coc only does snippet and additional edit on confirm.
