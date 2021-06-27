@@ -154,6 +154,17 @@ nnoremap <silent> <leader>g :LazyGit<CR>
 nnoremap <leader>s :ISwap<CR>
 " switch between the last two files with bs
 nnoremap <BS> <C-^>
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R>=&ic?'\c':'\C'<CR><C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gVzv:call setreg('"', old_reg, old_regtype)<CR>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -274,7 +285,6 @@ let g:coc_global_extensions = [
             \ 'coc-tabnine',
             \ 'coc-tsserver',
             \ 'coc-vimtex',
-            \ 'coc-dictionary',
             \ 'coc-sh',
             \ 'coc-word']
 " " To go back to previous state use Ctrl+O
