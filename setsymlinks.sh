@@ -64,6 +64,10 @@ ln -sv ~/.dotfiles/scripts/brightness.sh ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/brightness.sh
 ln -sv ~/.dotfiles/scripts/dwmnet ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/dwmnet
+ln -sv ~/.dotfiles/scripts/audio2HDMI ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/audio2HDMI
+ln -sv ~/.dotfiles/scripts/audio2USB ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/audio2USB
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
