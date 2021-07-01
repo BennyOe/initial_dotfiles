@@ -69,6 +69,11 @@ chmod +x ~/.dotfiles/scripts/audio2HDMI
 ln -sv ~/.dotfiles/scripts/audio2USB ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/audio2USB
 
+ln -sv ~/.dotfiles/scripts/lightsOn ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/lightsOn
+ln -sv ~/.dotfiles/scripts/lightsOff ~/.local/bin/ 
+chmod +x ~/.dotfiles/scripts/lightsOff
+
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
 ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 

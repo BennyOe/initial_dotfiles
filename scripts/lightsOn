@@ -1,0 +1,4 @@
+#!/bin/sh
+lampe -s 9 y
+lampe -s 11 y
+lampe -s 12 y
