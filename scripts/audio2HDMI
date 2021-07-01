@@ -1,3 +1,4 @@
 #!/bin/sh
-pacmd set-default-sink 0
+output=$(pactl list short sinks | awk '/hdmi/ { print substr($1,1,1)}')
+pacmd set-default-sink $output
 

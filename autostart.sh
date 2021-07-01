@@ -38,3 +38,6 @@ thunar --daemon &
 #fi
 sleep 2
 spotifyd --no-daemon &
+
+# Hue Control
+~/.local/bin/lightsOn
