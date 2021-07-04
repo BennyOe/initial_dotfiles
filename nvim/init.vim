@@ -39,7 +39,7 @@ call plug#begin("~/.config/nvim/plugged")
     "Treesitter for better syntax highlighting
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Indent guides
-    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+    Plug 'lukas-reineke/indent-blankline.nvim'
     "lazygit plugin
     Plug 'kdheepak/lazygit.nvim'
     " FZF alternative
@@ -385,14 +385,14 @@ let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}]
 "" Treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+        disable = {},  -- list of language that will be disabled
     },
     indent = {
-enable = true
-}
+        enable = true
+    }
 }
 EOF
 "" Indent Line
@@ -407,11 +407,11 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fs <cmd>Telescope search_history<cr>
+nnoremap <leader>fn <cmd>Telescope search_history<cr>
 nnoremap <leader>fc <cmd>Telescope command_history<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
-nnoremap <leader>fa <cmd>Telescope spell_suggest<cr>
+nnoremap <leader>fs <cmd>Telescope spell_suggest<cr>
 "" Whickkey
 set timeoutlen=500
 lua << EOF
@@ -421,3 +421,4 @@ lua << EOF
     -- refer to the configuration section below
   }
 EOF
+hi clear Conceal
