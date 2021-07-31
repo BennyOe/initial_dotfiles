@@ -54,8 +54,8 @@ ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/rofi-power-menu
 ln -sv ~/.dotfiles/scripts/dekeys ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/dekeys
-ln -sv ~/.dotfiles/scripts/enkeys ~/.local/bin/
-chmod +x ~/.dotfiles/scripts/enkeys
+ln -sv ~/.dotfiles/scripts/uskeys ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/uskeys
 ln -sv ~/.dotfiles/scripts/spotifyChangeSong.sh ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/spotifyChangeSong.sh
 ln -sv ~/.dotfiles/scripts/volume.sh ~/.local/bin/ 
