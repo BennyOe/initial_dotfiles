@@ -1,58 +1,61 @@
 " Plugins
 call plug#begin("~/.config/nvim/plugged")
-
-  " Plugin Section
-  "colorschemes
-  Plug 'joshdick/onedark.vim'
-  "Fuzzy Search 
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  "Statusline
-  Plug 'itchyny/lightline.vim'
-  "intellisense and autocompletion
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'w0rp/ale'
-  Plug 'sheerun/vim-polyglot'
-  " snippets
-  Plug 'honza/vim-snippets'
-  ""undoTree
-  Plug 'mbbill/undotree'
-  "css colors
-  Plug 'ap/vim-css-color'
-  "i3config colors
-  Plug 'mboughaba/i3config.vim'
-  "code commenting
-  Plug 'preservim/nerdcommenter'
-  "git from vim
-  Plug 'tpope/vim-fugitive'
-  "PLugin to autoclose brackets
-  Plug 'jiangmiao/auto-pairs'
-  "Plugin to wrap text
-  Plug 'tpope/vim-surround'
-  "Plugin for icons
-  Plug 'ryanoasis/vim-devicons'
-  "Plugin for startup screen
-  Plug 'mhinz/vim-startify'
-  "Plugins for latex
-  Plug 'lervag/vimtex'
-  "Rainbow colored brackets and csv
-  Plug 'luochen1990/rainbow'
-  "Grammar checker
-  Plug 'rhysd/vim-grammarous'
-  "Treesitter for better syntax highlighting
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  "Shortcut helper
-  "Plug 'folke/which-key.nvim'
-  "Indent guides
-  Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
-  "lazygit plugin
-   Plug 'kdheepak/lazygit.nvim'
-  " FZF alternative
-   Plug 'nvim-lua/popup.nvim'
-   Plug 'nvim-lua/plenary.nvim'
-   Plug 'nvim-telescope/telescope.nvim'
-  " Whichkey shortcut helper
-   Plug 'folke/which-key.nvim'
+    " Plugin Section
+    "colorschemes
+    Plug 'joshdick/onedark.vim'
+    "Fuzzy Search 
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    "Statusline
+    Plug 'itchyny/lightline.vim'
+    "intellisense and autocompletion
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'w0rp/ale'
+    Plug 'sheerun/vim-polyglot'
+    " snippets
+    Plug 'honza/vim-snippets'
+    ""undoTree
+    Plug 'mbbill/undotree'
+    "css colors
+    Plug 'ap/vim-css-color'
+    "i3config colors
+    Plug 'mboughaba/i3config.vim'
+    "code commenting
+    Plug 'preservim/nerdcommenter'
+    "git from vim
+    Plug 'tpope/vim-fugitive'
+    "PLugin to autoclose brackets
+    Plug 'jiangmiao/auto-pairs'
+    "Plugin to wrap text
+    Plug 'tpope/vim-surround'
+    "Plugin for icons
+    Plug 'ryanoasis/vim-devicons'
+    "Plugin for startup screen
+    Plug 'mhinz/vim-startify'
+    "Plugins for latex
+    Plug 'lervag/vimtex'
+    "Rainbow colored brackets and csv
+    Plug 'luochen1990/rainbow'
+    "Grammar checker
+    Plug 'rhysd/vim-grammarous'
+    "Treesitter for better syntax highlighting
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    "Indent guides
+    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+    "lazygit plugin
+    Plug 'kdheepak/lazygit.nvim'
+    " FZF alternative
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    " Whichkey shortcut helper
+    Plug 'folke/which-key.nvim'
+    " Swap parameters
+    Plug 'mizlan/iswap.nvim'
+    " Markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    " set the pwd to project root
+    Plug 'airblade/vim-rooter'
 call plug#end()
 
 "" Neovim config
@@ -67,6 +70,7 @@ set nolist " so softwrapping works
 set tabstop=4 softtabstop=4 " set tab size
 set shiftwidth=4 " affect amount of indentation
 set expandtab " set that tab will insert softabstop amount of space characters
+set mouse=a " enable clicking with the mouse
 set nowritebackup " set to never save backup                                 
 set noswapfile " set no swap file 
 set nobackup " set no backup file
@@ -75,7 +79,7 @@ set smartindent " set smart indentation
 set ignorecase "set search to case insensitive
 set smartcase " set to be case sensitive when there is capital letter, this needs set incsearch to work
 set incsearch " for smartcase
-set hidden " sp multiple buffers can be open
+set hidden " so multiple buffers can be open
 set updatetime=250 " update faster for autocompletion
 set shortmess+=c " for CoC plugin
 set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
@@ -94,11 +98,16 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+" Split resizing
+nnoremap <C-Right> <C-w>>
+nnoremap <C-Left> <C-w><
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
 " remove seach highlighting
 map <leader>n :noh<CR>
 " Split panel
 nnoremap <leader>v <C-w>v
-nnoremap <leader>s <C-w>s
+nnoremap <leader>ws <C-w>s
 nnoremap <leader>ts :belowright 12split <bar> term<CR> 
 " close panels
 nnoremap <leader>x <C-w>c
@@ -118,26 +127,27 @@ nnoremap <leader>p "+p
 " " in visual mode
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
+" " fix indentaion
+nnoremap <leader>i gg=G<C-o>
 " make esc exit from the terminal in vim
 tnoremap <leader><Esc> <C-\><C-n>
-"open terminal
-nnoremap <leader>t :term<CR>
 " navigate quickfix
 nnoremap <leader><leader>j :cn<CR>
 nnoremap <leader><leader>k :cp<CR>
 nnoremap <leader><leader>q :copen<CR>
 nnoremap <leader><leader>l :.cc<CR>
+" Markdown Preview control
+nmap <leader>m <Plug>MarkdownPreview
 " map spelling 
 nnoremap <F8>  :setlocal spell spelllang=de,en <return>
 nnoremap <F9>  :set nospell <return>
 " ctrl l to correct the last spelling mistake
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" jk to esc
-"inoremap jk <Esc>
-"inoremap jj <Esc>
-"inoremap kj <Esc>
 " open Lazygit window
 nnoremap <silent> <leader>g :LazyGit<CR>
+nnoremap <leader>s :ISwap<CR>
+" switch between the last two files with bs
+nnoremap <BS> <C-^>
 "" Autocommands
 " make F5 run current buffer
 autocmd Filetype c,cpp  inoremap <buffer> <F5> <C-o>:update<Bar>execute '!make '.shellescape(expand('%:r'), 1)<CR>
@@ -146,14 +156,16 @@ autocmd Filetype java   inoremap <buffer> <F5> <C-o>:update<Bar>execute '!javac 
 autocmd Filetype ruby   inoremap <buffer> <F5> <C-o>:update<Bar>execute '!ruby '.shellescape(@%, 1)<CR>
 " save the folds in a file and open them when file is opened
 augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * silent! mkview
-  autocmd BufWinEnter * silent! loadview
+    autocmd!
+    autocmd BufWinLeave * silent! mkview
+    autocmd BufWinEnter * silent! loadview
 augroup END
+" open vim on cwd of file
+autocmd BufEnter * silent! lcd %:p:h
 
 "" Theme settings
 if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
 endif
 set background=dark
 let g:onedark_hide_endofbuffer = 1
@@ -163,35 +175,35 @@ highlight CocHighlightText ctermfg=LightMagenta guifg=LightMagenta
 " RainbowBrackets config
 let g:rainbow_active = 1
 let g:rainbow_conf = {
-\	'guifgs': ['#ABB2BF','#E5C07B', '#61AFEF', '#C678DD', '#56B6C2'],
-\	'ctermfgs': ['cyan', 'lightred', 'lightyellow', 'blue'],
-\	'guis': [''],
-\	'cterms': [''],
-\	'operators': '_,_',
-\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\	'separately': {
-\		'*': {},
-\		'markdown': {
-\			'parentheses_options': 'containedin=markdownCode contained',
-\		},
-\		'lisp': {
-\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], 
-\		},
-\		'haskell': {
-\			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
-\		},
-\		'vim': {
-\			'parentheses_options': 'containedin=vimFuncBody',
-\		},
-\		'perl': {
-\			'syn_name_prefix': 'perlBlockFoldRainbow',
-\		},
-\		'stylus': {
-\			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
-\		},
-\		'css': 0,
-\	}
-\}
+            \	'guifgs': ['#ABB2BF','#E5C07B', '#61AFEF', '#C678DD', '#56B6C2'],
+            \	'ctermfgs': ['cyan', 'lightred', 'lightyellow', 'blue'],
+            \	'guis': [''],
+            \	'cterms': [''],
+            \	'operators': '_,_',
+            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \	'separately': {
+            \		'*': {},
+            \		'markdown': {
+            \			'parentheses_options': 'containedin=markdownCode contained',
+            \		},
+            \		'lisp': {
+            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], 
+            \		},
+            \		'haskell': {
+            \			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+            \		},
+            \		'vim': {
+            \			'parentheses_options': 'containedin=vimFuncBody',
+            \		},
+            \		'perl': {
+            \			'syn_name_prefix': 'perlBlockFoldRainbow',
+            \		},
+            \		'stylus': {
+            \			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+            \		},
+            \		'css': 0,
+            \	}
+            \}
 " Latex Plugins config
 nnoremap <leader>tt :VimtexCompile<CR>
 nnoremap <leader>tv :VimtexView<CR>
@@ -211,28 +223,28 @@ noremap <silent> <C-b> :CocCommand explorer<CR>
 nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-s': 'split',
+            \ 'ctrl-v': 'vsplit'
+            \}
 " Lightline
 let g:lightline = {
-  \     'colorscheme': 'onedark',
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified']],
-  \         'right': [['cocstatus'], ['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-  \     },
-	\ 'component_function': {
-	\   'cocstatus': 'coc#status',
-    \   'gitbranch': 'FugitiveHead'
-	\ },
-  \ }
+            \     'colorscheme': 'onedark',
+            \     'active': {
+            \         'left': [['mode', 'paste' ], ['gitbranch', 'readonly', 'filename', 'modified']],
+            \         'right': [['cocstatus'], ['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+            \     },
+            \ 'component_function': {
+            \   'cocstatus': 'coc#status',
+            \   'gitbranch': 'FugitiveHead'
+            \ },
+            \ }
 "CoC and ALE config
 " ALE (Asynchronous Lint Engine)
 let g:ale_fixers = {
-      \ 'javascript': ['prettier','eslint'],
-      \ 'tex': ['latexindent'],
-      \ }
+            \ 'javascript': ['prettier','eslint'],
+            \ 'tex': ['latexindent'],
+            \ }
 let g:ale_sign_error = ''
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
@@ -241,22 +253,22 @@ let g:ale_fix_on_save = 1
 " " COC extension
 let g:coc_user_config = {}
 let g:coc_global_extensions = [
-      \ 'coc-clangd', 
-      \ 'coc-css', 
-      \ 'coc-eslint',
-      \ 'coc-explorer',
-      \ 'coc-html', 
-      \ 'coc-java', 
-      \ 'coc-json', 
-      \ 'coc-prettier', 
-      \ 'coc-python',
-      \ 'coc-snippets', 
-      \ 'coc-solargraph',
-      \ 'coc-tabnine',
-      \ 'coc-tsserver', 
-      \ 'coc-vimtex', 
-      \ 'coc-sh', 
-      \ 'coc-word']
+            \ 'coc-clangd', 
+            \ 'coc-css', 
+            \ 'coc-eslint',
+            \ 'coc-explorer',
+            \ 'coc-html', 
+            \ 'coc-java', 
+            \ 'coc-json', 
+            \ 'coc-prettier', 
+            \ 'coc-python',
+            \ 'coc-snippets', 
+            \ 'coc-solargraph',
+            \ 'coc-tabnine',
+            \ 'coc-tsserver', 
+            \ 'coc-vimtex', 
+            \ 'coc-sh', 
+            \ 'coc-word']
 " " To go back to previous state use Ctrl+O
 nmap <silent><leader>gd <Plug>(coc-definition)
 nmap <silent><leader>gy <Plug>(coc-type-definition)
@@ -265,23 +277,23 @@ nmap <silent><leader>gr <Plug>(coc-references)
 
 " " remap tab to go thorough autocompletion menu
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " " Always show the signcolumn, otherwise it would shift the text each time
 " " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-  " " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+    " " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
 else
-  set signcolumn=yes
+    set signcolumn=yes
 endif
 
 " " Use <c-space> to trigger completion.
@@ -291,9 +303,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " " position. Coc only does snippet and additional edit on confirm.
 " " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " " Highlight the symbol and its references when holding the cursor.
@@ -304,14 +316,14 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " " Applying codeAction to the selected region.
@@ -337,13 +349,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
 endfunction
 
 " " Add (Neo)Vim's native statusline support.
@@ -351,7 +363,7 @@ endfunction
 " " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Startify setup
-let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}, {'i': '~/.i3/config'}]
+let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}]
 "" Treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -359,26 +371,19 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = {},  -- list of language that will be disabled
-  },
-  indent = {
-    enable = true
-  }
+    },
+    indent = {
+enable = true
+}
 }
 EOF
-"" Whichkey
-set timeoutlen=500
-"lua << EOF
-  "require("which-key").setup {
-    "-- your configuration comes here TODO
-  "}
-"EOF
 "" Indent Line
 let g:indentLine_char = '│'
 let g:indent_blankline_show_first_indent_level = v:false
-let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer']
+let g:indent_blankline_filetype_exclude = ['help', 'scratch', 'coc-explorer', 'startify']
 let g:indent_blankline_show_current_context = v:true
-let g:indent_blankline_context_patterns = ['class', 'function', 'method','^if']
-
+let g:indent_blankline_context_patterns = ['class', 'function', 'method', '^if', '^case', '^while', '^for']
+let g:indent_blankline_show_trailing_blankline_indent = v:false
 "" Telescope"
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>

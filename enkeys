@@ -1,0 +1,5 @@
+#!/bin/bash
+
+setxkbmap us
+xmodmap ~/.Xmodmap
+xset r rate 200 30 &
