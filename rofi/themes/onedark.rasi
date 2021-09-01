@@ -36,11 +36,18 @@ configuration {
 element {
   padding: 12;
   orientation: vertical;
-  text-color: @white;
+}
+
+element-text {
+    text-color: @white;
+}
+
+element-text selected {
+    text-color: @magenta;
+    background-color: transparent;
 }
 
 element selected {
-  text-color: @magenta;
   background-color: @magenta-trans;
   border-color: @magenta;
   border: 1px 0 1px 0;
@@ -80,4 +87,3 @@ window {
   border-radius:3px;
   border:1px;
 }
-
