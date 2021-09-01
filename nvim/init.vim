@@ -11,7 +11,6 @@ call plug#begin("~/.config/nvim/plugged")
     "intellisense and autocompletion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
-    "Plug 'sheerun/vim-polyglot' " TODO: check if needed "
     " snippets
     Plug 'honza/vim-snippets'
     ""undoTree

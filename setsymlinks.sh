@@ -6,7 +6,7 @@ sleep 2
 cd ~/.dotfiles
 
 rm ~/.zshrc
-ln -sv ~/.dotfiles/.zshrc ~ 
+ln -sv ~/.dotfiles/.zshrc ~
 
 rm ~/.vimrc
 ln -sv ~/.dotfiles/.vimrc ~
@@ -17,23 +17,23 @@ ln -sv ~/.dotfiles/autostart.sh ~/.dwm/
 
 mkdir ~/.config/dunst
 rm ~/.config/dunst/dunstrc
-ln -sv ~/.dotfiles/dunstrc ~/.config/dunst/ 
+ln -sv ~/.dotfiles/dunstrc ~/.config/dunst/
 
-sudo mkdir /usr/share/xsessions 
+sudo mkdir /usr/share/xsessions
 sudo cp ~/.dotfiles/dwm.desktop /usr/share/xsessions/dwm.desktop
 
 mkdir ~/.config/picom/
 rm ~/.config/picom/picom.conf
-ln -sv ~/.dotfiles/picom.conf ~/.config/picom/ 
+ln -sv ~/.dotfiles/picom.conf ~/.config/picom/
 
 rm -rf ~/.config/nvim
 mkdir ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/ 
-ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim/ 
+ln -sv ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/
+ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 
 rm -rf ~/.config/ranger
 mkdir ~/.config/ranger
-ln -sv ~/.dotfiles/ranger/rc.conf ~/.config/ranger/ 
+ln -sv ~/.dotfiles/ranger/rc.conf ~/.config/ranger/
 ln -sv ~/.dotfiles/ranger/rifle.conf ~/.config/ranger/
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ln -s ~/.dotfiles/ranger/scope.sh ~/.config/ranger/
@@ -42,24 +42,34 @@ chmod +x ~/.config/ranger/scope.sh
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
 mkdir ~/.config/rofi/themes
-ln -sv ~/.dotfiles/rofi/config ~/.config/rofi/ 
-ln -sv ~/.dotfiles/rofi/themes/onedark.rasi ~/.config/rofi/themes/ 
+ln -sv ~/.dotfiles/rofi/config.rasi ~/.config/rofi/
+ln -sv ~/.dotfiles/rofi/themes/onedark.rasi ~/.config/rofi/themes/
 
 mkdir ~/.local/bin
-ln -sv ~/.dotfiles/scripts/pdfshrink ~/.local/bin/ 
+ln -sv ~/.dotfiles/scripts/pdfshrink ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/pdfshrink
-ln -sv ~/.dotfiles/scripts/launchspt ~/.local/bin/ 
+ln -sv ~/.dotfiles/scripts/launchspt ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/launchspt
-ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/ 
+ln -sv ~/.dotfiles/scripts/rofi-power-menu ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/rofi-power-menu
 ln -sv ~/.dotfiles/scripts/dekeys ~/.local/bin/
 chmod +x ~/.dotfiles/scripts/dekeys
-ln -sv ~/.dotfiles/scripts/enkeys ~/.local/bin/
-chmod +x ~/.dotfiles/scripts/enkeys
+ln -sv ~/.dotfiles/scripts/uskeys ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/uskeys
+ln -sv ~/.dotfiles/scripts/spotifyChangeSong.sh ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/spotifyChangeSong.sh
+ln -sv ~/.dotfiles/scripts/volume.sh ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/volume.sh
+ln -sv ~/.dotfiles/scripts/brightness.sh ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/brightness.sh
+ln -sv ~/.dotfiles/scripts/dwmnet ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/dwmnet
+ln -sv ~/.dotfiles/scripts/battery ~/.local/bin/
+chmod +x ~/.dotfiles/scripts/battery
 
 rm -rf ~/.config/flameshot
 mkdir ~/.config/flameshot
-ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/ 
+ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/
 
 #rm -rf ~/.config/autorandr/
 #ln -sv ~/.dotfiles/autorandr ~/.config/autorandr

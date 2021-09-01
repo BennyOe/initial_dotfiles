@@ -19,14 +19,14 @@ configuration {
   blue: #61afef;
   cyan: #56b6c2;
 
-  blue-trans: rgba(97,175,239,0.2); 
+  blue-trans: rgba(97,175,239,0.2);
   magenta-trans: rgba(198,120,221,0.2);
   yellow-trans: rgba(229,192,123,0.2);
   cyan-trans: rgba(86,182,194,0.2);
 
   background-color: @bg;
   border-color: @blue;
-  
+
   border: 0;
   margin: 0;
   padding: 0;
@@ -36,18 +36,25 @@ configuration {
 element {
   padding: 12;
   orientation: vertical;
-  text-color: @white;
+}
+
+element-text {
+    text-color: @white;
+}
+
+element-text selected {
+    text-color: @magenta;
+    background-color: transparent;
 }
 
 element selected {
-  text-color: @magenta;
   background-color: @magenta-trans;
   border-color: @magenta;
   border: 1px 0 1px 0;
 }
 
 entry {
-  background-color: @blue-trans; 
+  background-color: @blue-trans;
   padding: 12 0 12 3;
   text-color: @blue;
 }
@@ -80,4 +87,3 @@ window {
   border-radius:3px;
   border:1px;
 }
-
