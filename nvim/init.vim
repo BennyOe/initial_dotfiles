@@ -41,7 +41,7 @@ call plug#begin("~/.config/nvim/plugged")
     "Treesitter for better syntax highlighting
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Indent guides
-    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+    Plug 'lukas-reineke/indent-blankline.nvim'
     "lazygit plugin
     Plug 'kdheepak/lazygit.nvim'
     " FZF alternative

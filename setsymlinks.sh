@@ -42,7 +42,7 @@ chmod +x ~/.config/ranger/scope.sh
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
 mkdir ~/.config/rofi/themes
-ln -sv ~/.dotfiles/rofi/config ~/.config/rofi/ 
+ln -sv ~/.dotfiles/rofi/config.rasi ~/.config/rofi/ 
 ln -sv ~/.dotfiles/rofi/themes/onedark.rasi ~/.config/rofi/themes/ 
 
 mkdir ~/.local/bin
