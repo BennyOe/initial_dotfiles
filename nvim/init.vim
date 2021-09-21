@@ -151,6 +151,8 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " open Lazygit window
 nnoremap <silent> <leader>g :LazyGit<CR>
 nnoremap <leader>s :ISwap<CR>
+" edit snippets
+nnoremap <silent> <leader>es :CocCommand snippets.editSnippets<CR>
 " switch between the last two files with bs
 nnoremap <BS> <C-^>
 " Search for selected text, forwards or backwards.

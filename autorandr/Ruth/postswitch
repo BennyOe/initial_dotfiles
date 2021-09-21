@@ -1,0 +1,7 @@
+#!/bin/bash
+
+setxkbmap de
+xmodmap ~/.Xmodmap
+nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpaper/0257.jpg
+nitrogen --head=1 --set-zoom-fill ~/Pictures/Wallpaper/0257.jpg
+multilockscreen -u ~/Pictures/Wallpaper/0257.jpg &
