@@ -43,6 +43,8 @@ plugins=(
 	zsh-syntax-highlighting
 	vi-mode
 	colorize
+	docker
+	docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
