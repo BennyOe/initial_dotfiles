@@ -53,6 +53,8 @@ call plug#begin("~/.config/nvim/plugged")
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     " set the pwd to project root
     Plug 'airblade/vim-rooter'
+    " Autoclose html tags
+    Plug 'alvan/vim-closetag'
 call plug#end()
 
 "" Neovim config
@@ -423,3 +425,5 @@ lua << EOF
   }
 EOF
 hi clear Conceal
+"" Closetag settings
+let g:closetag_filetypes = 'html,xhtml,phtml,vue'
