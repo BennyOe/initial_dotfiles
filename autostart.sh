@@ -1,12 +1,12 @@
 #xrandr -s 1920x1080
 #xrandr --output eDP1 --scale 0.7
 autorandr --change
-dwmblocks & 
+dwmblocks &
 picom &
-xidlehook --not-when-fullscreen --not-when-audio --timer 600 'multilockscreen -l dimblur' '' &
+xidlehook --not-when-fullscreen --not-when-audio --timer 600 'betterlockscreen -l dimblur' '' &
 
 # systray applets
-nm-applet & 
+nm-applet &
 pa-applet &
 blueman-applet &
 
