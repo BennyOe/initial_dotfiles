@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$PATH:$HOME/.local/bin
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-16-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
@@ -101,6 +101,12 @@ alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; c
 
 # anaconda
 alias startconda='source /opt/anaconda/bin/activate root'
+
+# aliases for docker
+alias dr='docker run'
+alias ds='docker start'
+alias de='docker exec'
+alias dk='docker stop'
 
 # yay refresh dwmblocks
 yay() {
