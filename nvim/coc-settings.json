@@ -10,6 +10,7 @@
     },
     "prettier.tabWidth": 4,
     "prettier.singleQuote": false,
+    "vetur.format.options.tabSize": 4,
     "coc.preferences.formatOnSaveFiletypes": [
         "javascript",
         "typescript",
@@ -17,7 +18,8 @@
         "markdown",
         "ruby",
         "clang",
-        "python"
+        "python",
+        "vue"
     ],
     "solargraph.hover": true,
     "solargraph.formatting": true,
