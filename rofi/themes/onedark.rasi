@@ -39,7 +39,8 @@ element {
 }
 
 element-text {
-    text-color: @white;
+ background-color: transparent;
+ text-color: @white;
 }
 
 element-text selected {
