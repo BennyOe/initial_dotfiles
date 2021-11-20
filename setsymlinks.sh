@@ -26,11 +26,6 @@ mkdir ~/.config/picom/
 rm ~/.config/picom/picom.conf
 ln -sv ~/.dotfiles/picom.conf ~/.config/picom/ 
 
-rm -rf ~/.config/nvim
-mkdir ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/ 
-ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim/ 
-
 rm -rf ~/.config/ranger
 mkdir ~/.config/ranger
 ln -sv ~/.dotfiles/ranger/rc.conf ~/.config/ranger/ 
