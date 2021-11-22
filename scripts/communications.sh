@@ -11,4 +11,5 @@ xdotool key Super_L+h
 xdotool key Super_L+h
 xdotool key Super_L+h
 xdotool key Super_L+h
+xdotool key Super_L+h
 xdotool key Super_L+period
