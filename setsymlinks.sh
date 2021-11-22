@@ -102,7 +102,7 @@ mkdir ~/.config/gtk-3.0
 ln ~/.dotfiles/settings.ini ~/.config/gtk-3.0
 chmod +x ~/.config/gtk-3.0/settings.ini
 
-ln ~/.dotfiles/communications.sh ~/.local/bin/
+ln ~/.dotfiles/scripts/communications.sh ~/.local/bin/
 chmod +x ~/.local/bin/communications.sh
 
 sudo mkdir /usr/share/wallpapers
