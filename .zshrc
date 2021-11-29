@@ -72,7 +72,7 @@ alias lsla='lsd -la'
 alias lsld='ls -d */'
 
 #alias for faster *rc editing
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vimrc='vim ~/.config/nvim/init.lua'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias picomrc="vim ~/.config/picom/picom.conf"
