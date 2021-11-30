@@ -21,6 +21,7 @@
         "ruby",
         "clang",
         "sh",
+        "lua",
         "python"
     ],
     "solargraph.hover": true,

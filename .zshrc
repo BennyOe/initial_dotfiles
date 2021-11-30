@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$PATH:$HOME/.local/bin
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-16-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
@@ -72,7 +72,7 @@ alias ls='lsd'
 alias lsla='lsd -la'
 
 #alias for faster *rc editing
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vimrc='vim ~/.config/nvim/init.lua'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias picomrc="vim ~/.config/picom/picom.conf"

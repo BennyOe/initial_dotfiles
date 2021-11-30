@@ -133,7 +133,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 " paste with correct indent
-:nnoremap p ]p
+nnoremap p ]p
 " " fix indentaion
 nnoremap <leader>i gg=G<C-o>
 " make esc exit from the terminal in vim
