@@ -19,6 +19,8 @@ export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
 export _JAVA_AWT_WM_NONREPARENTING=1
+# Path for IntelliJ 
+export IDEA_JDK=/usr/lib/jvm/java-11-openjdk/bin
 
 #################
 
