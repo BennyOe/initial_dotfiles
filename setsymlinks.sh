@@ -100,5 +100,7 @@ sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp ~/.dotfiles/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 sudo cp ~/.dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+mkdir ~/Daten
 printf " dotfiles successfully installed\n"
 sleep 2
