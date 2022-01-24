@@ -1,5 +1,5 @@
 xrandr -s 2736x1824
-xrandr --output eDP1 --scale 0.5
+xrandr --output eDP1 --scale 0.7
 autorandr --change
 dwmblocks & 
 nitrogen --restore &
