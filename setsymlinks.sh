@@ -89,7 +89,7 @@ ln ~/.dotfiles/settings.ini ~/.config/gtk-3.0
 chmod +x ~/.config/gtk-3.0/settings.ini
 
 ln ~/.dotfiles/scripts/communications.sh ~/.local/bin/
-chmod +x ~/.local/bin/communications.sh
+chmod +x ~/.dotfiles/scripts/communications.sh
 
 sudo mkdir /usr/share/wallpapers
 sudo cp ~/.dotfiles/default_wallpaper.png /usr/share/wallpapers/default_wallpaper.png
