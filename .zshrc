@@ -8,7 +8,7 @@ fi
 ###############
 ### Exports ###
 ###############
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
@@ -18,6 +18,8 @@ export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
 export DIFFPROG="nvim -d $1"
+export UPDATE_ZSH_DAYS=2
+ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
 #################
 
@@ -40,6 +42,7 @@ export DIFFPROG="nvim -d $1"
 plugins=(
 	git
 	colored-man-pages
+    autoupdate
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	vi-mode

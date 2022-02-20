@@ -17,3 +17,4 @@ nnoremap <leader>p "+p
 " " in visual mode
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
+set ideajoin
