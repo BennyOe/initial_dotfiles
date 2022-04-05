@@ -13,13 +13,14 @@ export PATH=$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
-export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
+export PATH=$PATH:/usr/lib/ruby/gems/3.0.0
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
 export DIFFPROG="nvim -d $1"
 export UPDATE_ZSH_DAYS=2
-ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+export ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
 #################
 
@@ -108,6 +109,16 @@ alias dso='docker stop'
 alias dsa='docker start'
 alias doc='docker-compose'
 
+# project based aliases
+
+# open the last editet chapter
+ba() {
+    cd ~/uni/BA/bachelor_thesis/bachelor_thesis/chapters/
+    nvim *(om[1]) -c "VimtexCompile"
+    xdotool key Super+l
+    xdotool key Super+l
+}
+
 # yay refresh dwmblocks
 yay() {
 	/usr/bin/yay "$@"
@@ -148,22 +159,8 @@ fkill() {
 #language stuff#
 ################
 
-# >>> conda initialize >>>
-#!! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/paul/.applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/paul/.applications/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # enable history support in erlang
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init - zsh)"
