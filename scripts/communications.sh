@@ -1,7 +1,7 @@
 #!/bin/bash
 discord &
 signal-desktop &
-whatsapp-for-linux &
+whatsapp-nativefier &
 sleep 1
 xdotool key Super_L+comma
 xdotool key Super_L+6
