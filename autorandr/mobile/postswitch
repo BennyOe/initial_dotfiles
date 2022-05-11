@@ -1,6 +1,11 @@
 #!/bin/bash
 
-setxkbmap de
-xmodmap ~/.Xmodmap
 nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpaper/0146.jpg
 betterlockscreen -u ~/Pictures/Wallpaper/0146.jpg &
+dunstify -u low -r 10 "Changed to mobile monitor layout" 
+
+# load the de layout
+setxkbmap de
+xmodmap ~/.Xmodmap
+xset r rate 200 30 &
+dunstify -u low -r 3 "Keyboard Layout switched to DE" 

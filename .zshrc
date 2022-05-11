@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-18-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
@@ -114,7 +114,12 @@ alias doc='docker-compose'
 # open the last editet chapter
 ba() {
     cd ~/uni/BA/bachelor_thesis/bachelor_thesis/chapters/
+    resize &
     nvim *(om[1]) -c "VimtexCompile"
+}
+
+resize() {
+    sleep 1
     xdotool key Super+l
     xdotool key Super+l
 }

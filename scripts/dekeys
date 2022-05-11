@@ -3,3 +3,4 @@
 setxkbmap de
 xmodmap ~/.Xmodmap
 xset r rate 200 30 &
+dunstify -u low -r 10 "Keyboard Layout switched to DE" 
