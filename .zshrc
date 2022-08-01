@@ -131,6 +131,12 @@ dotc() {
     cd -
 }
 
+# open the last editet chapter
+ba() {
+    cd ~/Data/BachelorThesis/thesis/bachelor_thesis/bachelor_thesis/chapters/
+    nvim *(om[1]) -c "VimtexCompile"
+}
+
 # >>> conda initialize >>>
 #!! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/paul/.applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

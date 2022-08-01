@@ -16,6 +16,8 @@ blueman-applet &
 # set the delay time for the keyboard
 xset r rate 200 30 &
 
+# turn off screensaver
+xset s off
 # Xmodmap
 #xmodmap ~/.Xmodmap
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 lampe -s 9 n
 lampe -s 11 n
 lampe -s 12 n
