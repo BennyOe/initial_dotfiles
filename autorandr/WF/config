@@ -1,11 +1,12 @@
 output VIRTUAL1
 off
 output HDMI1
-crtc 1
+crtc 0
 gamma 0.769:0.769:0.769
-mode 1920x1080
+mode 2560x1440
 pos 0x0
-rate 60.00
+primary
+rate 59.95
 x-prop-aspect_ratio Automatic
 x-prop-audio auto
 x-prop-broadcast_rgb Automatic
@@ -13,11 +14,10 @@ x-prop-colorspace Default
 x-prop-max_bpc 12
 x-prop-non_desktop 0
 output eDP1
-crtc 0
-gamma 0.625:0.625:0.625
+crtc 1
+gamma 0.769:0.769:0.769
 mode 1920x1080
-pos 1920x480
-primary
+pos 270x1440
 rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default

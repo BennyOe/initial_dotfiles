@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-18-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-18-openjdk/
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
@@ -21,6 +21,13 @@ export EDITOR="nvim"
 export DIFFPROG="nvim -d $1"
 export UPDATE_ZSH_DAYS=2
 export ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
+# export ANDROID_HOME='/opt/android-sdk'
+export CHROME_EXECUTABLE='/usr/bin/brave'
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 
 #################
 
@@ -109,6 +116,13 @@ alias dso='docker stop'
 alias dsa='docker start'
 alias doc='docker-compose'
 
+# flutter
+alias fpg='flutter pub get'
+alias fpa='flutter pub add'
+
+# zip everything that is checked into git used like this: gitzip [OUTPUT_FILE]
+alias gitzip="git archive HEAD -o "
+
 # project based aliases
 
 # open the last editet chapter
@@ -159,6 +173,7 @@ fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
 
 ################
 #language stuff#
