@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-18-openjdk/
+export JAVA_HOME=/usr/lib/jvm/java-19-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
@@ -28,6 +28,8 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+# dotnet tools
+export PATH=$PATH:$HOME/.dotnet/tools/
 
 #################
 
@@ -123,6 +125,9 @@ alias fpa='flutter pub add'
 # zip everything that is checked into git used like this: gitzip [OUTPUT_FILE]
 alias gitzip="git archive HEAD -o "
 
+# when the keyboard is german but should be english
+alias zaz='uskeys'
+
 # project based aliases
 
 # open the last editet chapter
@@ -172,6 +177,12 @@ fkill() {
     then
         echo $pid | xargs kill -${1:-9}
     fi
+}
+
+notes() {
+    cd ~/notes/
+    v index.norg
+    cd -
 }
 
 

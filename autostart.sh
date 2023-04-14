@@ -18,6 +18,7 @@ numlockx on
 
 # map lctrl to escape
 xcape -e 'Control_L=Escape'
+xcape -e 'Mode_switch=Escape'
 
 #start polkit agent
 /lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
