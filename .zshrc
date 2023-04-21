@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-19-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-20-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
