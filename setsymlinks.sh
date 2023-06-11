@@ -75,7 +75,7 @@ ln -sv ~/.dotfiles/flamrshot.ini ~/.config/flameshot/
 #ln -sv ~/.dotfiles/autorandr ~/.config/autorandr
 #chmod +x ~/.config/autorandr/mobile/postswitch ~/.config/autorandr/docked/postswitch
 
-rm -f .Xmodmap
+rm -f ~/.Xmodmap
 ln -sv ~/.dotfiles/.Xmodmap ~/
 
 rm -f ~/.ideavimrc

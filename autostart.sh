@@ -4,6 +4,8 @@ autorandr --change
 dwmblocks &
 picom &
 xidlehook --not-when-fullscreen --not-when-audio --timer 600 'betterlockscreen -l dimblur' '' &
+nitrogen --restore &
+
 
 # systray applets
 nm-applet &

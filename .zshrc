@@ -77,6 +77,7 @@ alias config='/usr/bin/git --git-dir=/home/benjamino/.myconfig/ --work-tree=/hom
 # alias for neovim
 alias vim='nvim'
 alias v='vim'
+alias vi='vim'
 alias oldvim='\vim'
 
 # alias for better ls
@@ -191,7 +192,7 @@ notes() {
 ################
 
 # enable history support in erlang
-export ERL_AFLAGS="-kernel shell_history enabled"
+# export ERL_AFLAGS="-kernel shell_history enabled"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"
