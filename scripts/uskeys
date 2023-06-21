@@ -2,3 +2,4 @@
 
 setxkbmap -layout us -variant altgr-intl
 xmodmap ~/.Xmodmap
+xset r rate 200 30

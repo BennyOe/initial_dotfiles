@@ -129,6 +129,8 @@ alias gitzip="git archive HEAD -o "
 # when the keyboard is german but should be english
 alias zaz='uskeys'
 
+alias sshcp='xclip -sel clip < ~/.ssh/id_ed25519.pub'
+
 # project based aliases
 
 # open the last editet chapter
@@ -148,6 +150,7 @@ resize() {
 yay() {
 	/usr/bin/yay "$@"
 	pkill -RTMIN+1 dwmblocks
+    uskeys
 }
 #function to safely remove my hdd
 removeHDD() {
