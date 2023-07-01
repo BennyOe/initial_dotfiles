@@ -5,7 +5,7 @@ betterlockscreen -u ~/Pictures/Wallpaper/0146.jpg &
 dunstify -u low -r 10 "Changed to mobile monitor layout" 
 
 # load the de layout
-setxkbmap de
+setxkbmap us
 xmodmap ~/.Xmodmap
 xset r rate 200 30 &
-dunstify -u low -r 3 "Keyboard Layout switched to DE" 
+dunstify -u low -r 3 "Keyboard Layout switched to US" 

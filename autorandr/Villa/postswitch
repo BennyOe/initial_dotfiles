@@ -6,4 +6,7 @@ nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpaper/0146.jpg
 nitrogen --head=1 --set-zoom-fill ~/Pictures/Wallpaper/0146.jpg
 betterlockscreen -u ~/Pictures/Wallpaper/0146.jpg &
 dunstify -u low -r 10 "Changed to docked monitor layout" 
+setxkbmap us
+xmodmap ~/.Xmodmap
 xset r rate 200 30 &
+dunstify -u low -r 3 "Keyboard Layout switched to US" 

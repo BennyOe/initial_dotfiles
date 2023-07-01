@@ -3,7 +3,7 @@ configuration {
     display-drun: "  ";
     display-window: "  ";
     drun-display-format: "{name}";
-font: "Ubuntu Nerd Font 16";
+font: "JetBrainsMono Nerd Font 16";
 modi: "window,run,drun";
       // show-icons: true;
 }
