@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$PATH:$HOME/.local/bin
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
@@ -20,7 +20,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
 # Path for IntelliJ 
-export IDEA_JDK=/usr/lib/jvm/java-11-openjdk/bin
+export IDEA_JDK=/usr/lib/jvm/java-8-openjdk/bin
 
 #################
 
@@ -156,3 +156,6 @@ unset __conda_setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # enable history support in erlang
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+
+source /home/benni/.config/broot/launcher/bash/br

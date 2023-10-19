@@ -1,6 +1,6 @@
 #!/bin/bash
 if ping -c 1 1.1.1.1 &>/dev/null; then
-    printf "^c#61afef^ ^c#abb2bf^ Connected"
+    printf "^c#7aa2f7^ ^c#abb2bf^ Connected"
 else
-    printf "^c#ABB2BF^ ^c#abb2bf^ No Connection"
+    printf "^c#f7768e^ ^c#abb2bf^ No Connection"
 fi

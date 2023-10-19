@@ -19,7 +19,7 @@ xset r rate 200 30 &
 # turn off screensaver
 xset s off
 # Xmodmap
-#xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap
 
 # set numblock on
 numlockx on &
