@@ -100,6 +100,9 @@ chmod +x ~/.config/gtk-3.0/settings.ini
 ln ~/.dotfiles/scripts/communications.sh ~/.local/bin/
 chmod +x ~/.local/bin/communications.sh
 
+ln ~/.dotfiles/scripts/slack.sh ~/.local/bin/
+chmod +x ~/.local/bin/slack.sh
+
 sudo mkdir /usr/share/wallpapers
 sudo cp ~/.dotfiles/default_wallpaper.png /usr/share/wallpapers/default_wallpaper.png
 sudo rm -f /etc/lightdm/lightdm-gtk-greeter.conf
