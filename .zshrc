@@ -22,8 +22,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Path for IntelliJ 
 export IDEA_JDK=/usr/lib/jvm/java-21-openjdk/bin
 # Pathes for Flutter
-export ANDROID_HOME=$HOME/android-sdk
+export ANDROID_HOME=/home/benni/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
 export PATH="/opt/flutter/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
