@@ -39,5 +39,3 @@ thunar --daemon &
 #then
 #    spotifyd --no-daemon &
 #fi
-sleep 2
-spotifyd --no-daemon &
