@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$HOME/.local/bin:$PATH
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-20-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
@@ -21,15 +21,21 @@ export EDITOR="nvim"
 export DIFFPROG="nvim -d $1"
 export UPDATE_ZSH_DAYS=2
 export ZSH_CUSTOM_AUTOUPDATE_QUIET=true
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
+export ANDROID_SDK_ROOT=$HOME/Tools/android
+# export ANDROID_SDK_ROOT=$HOME/Android/Sdk/android-sdk
 # export ANDROID_HOME='/opt/android-sdk'
 export CHROME_EXECUTABLE='/usr/bin/brave'
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export ANDROID_HOME=$ANDROID_SDK_ROOT
 # dotnet tools
 export PATH=$PATH:$HOME/.dotnet/tools/
+# yarn globals
+export PATH="$(yarn global bin):$PATH"
+# dart globals
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 #################
 
@@ -79,6 +85,8 @@ alias vim='nvim'
 alias v='vim'
 alias vi='vim'
 alias oldvim='\vim'
+alias vimdiff='nvim -d'
+alias zerovim='nvim -u NONE'
 
 # alias for better ls
 alias lsl='lsd -a'
@@ -189,6 +197,16 @@ notes() {
     cd -
 }
 
+dennis_git() {
+    git config user.name "Dennis Gottfried"
+    git config user.email "dennis.gottfried@student.htw-berlin.de"
+}
+
+paul_git() {
+    git config user.name "Paul Höppner"
+    git config user.email "paul.hoeppner@student.htw-berlin.de"
+}
+
 
 ################
 #language stuff#
@@ -199,3 +217,6 @@ notes() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # eval "$(rbenv init - zsh)"
+
+source /home/paul/.config/broot/launcher/bash/br
+source /usr/share/nvm/init-nvm.sh

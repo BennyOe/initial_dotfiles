@@ -3,8 +3,8 @@ configuration {
     display-drun: "  ";
     display-window: "  ";
     drun-display-format: "{name}";
-font: "JetBrainsMono Nerd Font 16";
+font: "JetBrainsMono NFM 16";
 modi: "window,run,drun";
       // show-icons: true;
 }
-@theme "onedark"
+@theme "tokyonight"
