@@ -34,6 +34,17 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 ln -s ~/.dotfiles/ranger/scope.sh ~/.config/ranger/
 chmod +x ~/.config/ranger/scope.sh
 
+rm -rf ~/.config/yazi
+mkdir ~/.config/yazi
+mkdir ~/.config/yazi/plugins
+mkdir ~/.config/yazi/flavors
+ln -sv ~/.dotfiles/yazi/init.lua ~/.config/yazi/ 
+ln -sv ~/.dotfiles/yazi/keymap.toml ~/.config/yazi/ 
+ln -sv ~/.dotfiles/yazi/theme.toml ~/.config/yazi/ 
+ln -sv ~/.dotfiles/yazi/yazi.toml ~/.config/yazi/ 
+ln -sv ~/.dotfiles/yazi/plugins/smart-enter.yazi ~/.config/yazi/plugins
+ln -sv ~/.dotfiles/yazi/flavors/tokyo-night.yazi ~/.config/yazi/flavors
+
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
 mkdir ~/.config/rofi/themes

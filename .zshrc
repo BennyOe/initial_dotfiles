@@ -10,7 +10,7 @@ fi
 ###############
 export PATH=$PATH:$HOME/.local/bin
 # Java Classpath and version
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
 export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
@@ -20,7 +20,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 export ZSH="${HOME}/.oh-my-zsh"
 export EDITOR="nvim"
 # Path for IntelliJ 
-export IDEA_JDK=/usr/lib/jvm/java-8-openjdk/bin
+export IDEA_JDK=/usr/lib/jvm/java-17-openjdk/bin
+# Flutterfire CLI
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 #################
 
@@ -99,7 +101,7 @@ alias spotify='sh ~/.local/bin/launchspt'
 alias size='sudo du -shc '
 
 # ranger
-alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # anaconda
 alias startconda='source /opt/anaconda/bin/activate root'
@@ -109,6 +111,13 @@ alias dr='docker run'
 alias ds='docker start'
 alias de='docker exec'
 alias dk='docker stop'
+alias dcud='docker-compose up -d'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
+alias dce='docker-compose exec'
+
+# alias for flutter riverpod
+alias riverpod='dart run build_runner watch'
 
 # yay refresh dwmblocks
 yay() {
@@ -159,3 +168,23 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 
 source /home/benni/.config/broot/launcher/bash/br
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#ssh agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval "$(ssh-agent -s)" > /dev/null 2>&1
+  ssh-add > /dev/null 2>&1
+fi
+
+#yazi config
+function ra() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
