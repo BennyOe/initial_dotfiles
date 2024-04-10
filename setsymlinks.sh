@@ -44,6 +44,7 @@ ln -sv ~/.dotfiles/yazi/theme.toml ~/.config/yazi/
 ln -sv ~/.dotfiles/yazi/yazi.toml ~/.config/yazi/ 
 ln -sv ~/.dotfiles/yazi/plugins/smart-enter.yazi ~/.config/yazi/plugins
 ln -sv ~/.dotfiles/yazi/flavors/tokyo-night.yazi ~/.config/yazi/flavors
+ln -sv ~/.dotfiles/yazi/flavors/onedark.yazi ~/.config/yazi/flavors
 
 rm -rf ~/.config/rofi
 mkdir ~/.config/rofi
