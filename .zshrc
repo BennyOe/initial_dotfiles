@@ -43,7 +43,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -140,6 +140,7 @@ alias zaz='uskeys'
 alias sshcp='xclip -sel clip < ~/.ssh/id_ed25519.pub'
 
 # project based aliases
+alias icw='cd ~/Uni/icw2/ && v icw2.tex'
 
 # open the last editet chapter
 ba() {
@@ -154,9 +155,11 @@ resize() {
     xdotool key Super+l
 }
 
-# yay refresh dwmblocks
+# yay/ paru refresh dwmblocks
+# TODO upadte to paru
 yay() {
-	/usr/bin/yay "$@"
+	# /usr/bin/yay "$@"
+    /usr/bin/paru "$@"
 	pkill -RTMIN+1 dwmblocks
     uskeys
 }

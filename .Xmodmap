@@ -1,7 +1,16 @@
-remove Lock = Caps_Lock
+! remove Lock = Caps_Lock
+! remove Lock = 66
+! remove Mod4 = 132
+clear lock
+clear mod4
+add mod4 = Super_L
 
-
+! assign Mode_switch to Caps_Lock
 keycode  66 = Mode_switch
+! assign Mode_switch to Super_L
+keycode  134 = Mode_switch
+
+! add the mode switch to the keycodes
 keycode  24 = q Q at at at
 keycode  26 = e E EuroSign EuroSign
 keycode  30 = u U udiaeresis Udiaeresis
