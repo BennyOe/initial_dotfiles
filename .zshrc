@@ -53,6 +53,8 @@ plugins=(
 	zsh-syntax-highlighting
 	vi-mode
 	colorize
+    docker 
+    docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,7 +106,7 @@ alias spotify='sh ~/.local/bin/launchspt'
 alias size='sudo du -shc '
 
 # ranger
-alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # yay refresh dwmblocks
 yay() {
@@ -116,6 +118,15 @@ removeHDD() {
   udisksctl unmount -b /dev/sdb1
   udisksctl unmount -b /dev/sdb2
   udisksctl power-off -b /dev/sdb
+}
+
+#function to add, commit and push changes to dotfiles from anywhere
+dotc() {
+    cd ~/.dotfiles
+    gall
+    gac
+    gp
+    cd -
 }
 
 # >>> conda initialize >>>
@@ -132,6 +143,16 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+#yazi config
+function ra() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
