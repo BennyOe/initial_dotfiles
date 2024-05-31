@@ -23,6 +23,8 @@ export EDITOR="nvim"
 export IDEA_JDK=/usr/lib/jvm/java-17-openjdk/bin
 # Flutterfire CLI
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+# Flutter vm
+export PATH=$PATH:HOME/benni/fvm/default/bin/
 
 #################
 
@@ -111,6 +113,7 @@ alias dr='docker run'
 alias ds='docker start'
 alias de='docker exec'
 alias dk='docker stop'
+alias dps='docker ps'
 alias dcud='docker-compose up -d'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
@@ -192,3 +195,9 @@ function ra() {
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/benni/.dart-cli-completion/zsh-config.zsh ]] && . /home/benni/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

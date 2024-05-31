@@ -21,6 +21,9 @@ xset s off
 # Xmodmap
 xmodmap ~/.Xmodmap
 
+# xbindkeys
+xbindkeys &
+
 # set numblock on
 numlockx on &
 
@@ -35,15 +38,6 @@ xcape -e 'Control_L=Escape' &
 
 # thunar daemon for mounting drives
 thunar --daemon &
-
-# spotify
-#if ! pgrep -x "spotifyd" > /dev/null
-#then
-    #spotifyd --no-daemon &
-    #sleep 1
-#fi
-sleep 2
-spotifyd --no-daemon &
 
 # Hue Control
 ~/.local/bin/lightsOn

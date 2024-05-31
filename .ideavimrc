@@ -24,9 +24,11 @@ let mapleader = " "
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
+let g:NERDOpenInRightSplit='s'
+let g:NERDOpenInRightSplit='s'
 let g:NERDTreeFocus=0
 nnoremap <c-b> :NERDTreeToggle<CR>
-nmap <leader>h <Action>(ActivateProjectToolWindow)
+nmap <leader><leader>h <Action>(ActivateProjectToolWindow)
 
 " editor
 nmap + :action EditorIncreaseFontSize<CR>
@@ -66,8 +68,8 @@ nmap <leader>x <Action>(CloseContent)
 nmap <leader>sx <Action>(Unsplit)
 
 " split navigation
-nmap <leader>k <Action>(PrevSplitter)
-nmap <leader>j <Action>(NextSplitter)
+nmap <leader>h <Action>(PrevSplitter)
+nmap <leader>l <Action>(NextSplitter)
 
 " running the code
 nmap <leader><leader>rr <Action>(Run)
@@ -88,8 +90,8 @@ nmap <leader>c<leader> <Action>(CommentByLineComment)
 vmap <leader>c<leader> <Action>(CommentByLineComment)
 
 " errors
-nmap e <Action>(GotoNextError)
-nmap E <Action>(GotoPreviousError)
+nmap <leader><leader>j <Action>(GotoNextError)
+nmap <leader><leader>k <Action>(GotoPreviousError)
 
 " highlight usages
 nmap <leader>n <Action>(HighlightUsagesInFile)
@@ -113,20 +115,18 @@ nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
 "  show
 nmap <leader>rf <Action>(RecentFiles)
-nmap <leader>q <Action>(QuickJavaDoc)
+nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(FindUsages)
-nmap <leader><leader>h <Action>(LocalHistory.ShowSelectionHistory)
-
 
 " Bookmarks and Breakpoints
-nmap <leader>b <Action>(ToggleBookmark)
+nmap <leader>f <Action>(ToggleBookmark)
 map {{ <Action>(GotoPreviousBookmark)
 map }} <Action>(GotoNextBookmark)
-nmap <leader>l <Action>(ToggleLineBreakpoint)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
 
 " switch tabs with backspace
-nmap <BS> <Action>(Switcher) <Enter>
+nmap <BS> <Action>(Switcher)
 
 " git
 nmap <leader><leader>gl <Action>(Git.Pull)
@@ -134,4 +134,6 @@ nmap <leader><leader>gp <Action>(Vcs.Push)
 nmap <leader><leader>gc <Action>(CheckinProject)
 nmap <leader><leader>gr <Action>(Git.Rebase)
 
+" find in files
+nmap <leader>ff <Action>(FindInPath)
 r> :comment<CR>

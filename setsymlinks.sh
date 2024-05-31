@@ -95,6 +95,9 @@ ln -sv ~/.dotfiles/spotifyd.conf ~/.config/spotifyd
 rm -f .Xmodmap
 ln -sv ~/.dotfiles/.Xmodmap ~/
 
+rm -f .xbindkeysrc
+ln -sv ~/.dotfiles/.xbindkeysrc ~/
+
 rm -f ~/.ideavimrc
 ln -sv ~/.dotfiles/.ideavimrc ~/
 
