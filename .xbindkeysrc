@@ -1,15 +1,15 @@
 # Ctrl+H -> Left Arrow
 "xvkbd -xsendevent -text '\[Left]'"
-  Control + h
+  alt + h
 
 # Ctrl+J -> Down Arrow
 "xvkbd -xsendevent -text '\[Down]'"
-  Control + j
+  alt + j
 
 # Ctrl+K -> Up Arrow
 "xvkbd -xsendevent -text '\[Up]'"
-  Control + k
+  alt + k
 
 # Ctrl+L -> Right Arrow
 "xvkbd -xsendevent -text '\[Right]'"
-  Control + l
+  alt + l
