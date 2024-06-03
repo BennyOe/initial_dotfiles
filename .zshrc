@@ -24,7 +24,7 @@ export IDEA_JDK=/usr/lib/jvm/java-17-openjdk/bin
 # Flutterfire CLI
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Flutter vm
-export PATH=$PATH:HOME/benni/fvm/default/bin/
+export PATH=$PATH:$HOME/fvm/default/bin
 
 #################
 
@@ -148,21 +148,6 @@ ba() {
     cd ~/Data/BachelorThesis/thesis/bachelor_thesis/bachelor_thesis/chapters/
     nvim *(om[1]) -c "VimtexCompile"
 }
-
-# >>> conda initialize >>>
-#!! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/paul/.applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/paul/.applications/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$PATH:/home/paul/.applications/anaconda3/bin"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
