@@ -110,7 +110,7 @@ alias size='sudo du -shc '
 
 # yay refresh dwmblocks
 yay() {
-	/usr/bin/yay "$@"
+	/usr/bin/paru "$@"
 	pkill -RTMIN+1 dwmblocks
 }
 #function to safely remove my hdd

@@ -83,13 +83,17 @@ nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
 nmap <leader>nd <Action>(NewDir)
 
+" selection
+vmap <leader>j <Action>(EditorSelectWord)
+vmap <leader>k <Action>(EditorUnSelectWord)
+
 " line comment
 nmap <leader>c<leader> <Action>(CommentByLineComment)
 vmap <leader>c<leader> <Action>(CommentByLineComment)
 
 " errors
-nmap e <Action>(GotoNextError)
-nmap E <Action>(GotoPreviousError)
+nmap <leader>e <Action>(GotoNextError)
+nmap <leader>E <Action>(GotoPreviousError)
 
 " highlight usages
 nmap <leader>n <Action>(HighlightUsagesInFile)
@@ -106,7 +110,7 @@ nmap gt :action GotoTest<CR>
 nmap <leader>oi <Action>(OptimizeImports)
 
 " reformat the code
-map <leader>f <Action>(ReformatCode)
+map <leader>fr <Action>(ReformatCode)
 
 " open terminal
 nmap <leader>t <Action>(ActivateTerminalToolWindow)

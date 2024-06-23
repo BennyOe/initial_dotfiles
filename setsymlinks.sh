@@ -52,6 +52,10 @@ mkdir ~/.config/rofi/themes
 ln -sv ~/.dotfiles/rofi/config.rasi ~/.config/rofi/ 
 ln -sv ~/.dotfiles/rofi/themes/onedark.rasi ~/.config/rofi/themes/ 
 
+rm -rf ~/.config/paru
+mkdir ~/.config/paru
+ln -sv ~/.dotfiles/paru/paru.conf ~/.config/paru/ 
+
 mkdir ~/.local/bin
 ln -sv ~/.dotfiles/scripts/pdfshrink ~/.local/bin/ 
 chmod +x ~/.dotfiles/scripts/pdfshrink
