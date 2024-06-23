@@ -79,7 +79,7 @@ nmap <leader><leader>rs <Action>(Stop)
 nmap <leader>g <Action>(Generate)
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>sw <Action>(SurroundWith)
-nmap <leader>nc <Action>(NewClass)
+nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
 nmap <leader>nd <Action>(NewDir)
 
