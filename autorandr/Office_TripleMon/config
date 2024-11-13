@@ -1,0 +1,50 @@
+output HDMI-1
+off
+output DP-1
+off
+output DP-2
+off
+output DP-1-1
+off
+output DP-1-2
+off
+output DP-1-3
+off
+output DP-1-4
+off
+output DP-1-3-1
+crtc 2
+filter bilinear
+mode 1680x1050
+pos 0x0
+rate 59.95
+rotate left
+transform 1.359970,0.000000,0.000000,0.000000,1.359970,0.000000,0.000000,0.000000,1.000000
+x-prop-audio auto
+x-prop-broadcast_rgb Automatic
+x-prop-max_bpc 12
+x-prop-non_desktop 0
+output DP-1-2-1
+crtc 1
+filter bilinear
+mode 1680x1050
+pos 4308x192
+rate 59.95
+transform 1.359970,0.000000,0.000000,0.000000,1.359970,0.000000,0.000000,0.000000,1.000000
+x-prop-audio auto
+x-prop-broadcast_rgb Automatic
+x-prop-max_bpc 12
+x-prop-non_desktop 0
+output eDP-1
+crtc 0
+filter bilinear
+mode 2880x1800
+pos 1428x1016
+primary
+rate 90.00
+transform 0.999878,0.000000,0.000000,0.000000,0.999878,0.000000,0.000000,0.000000,1.000000
+x-prop-broadcast_rgb Automatic
+x-prop-colorspace Default
+x-prop-max_bpc 12
+x-prop-non_desktop 0
+x-prop-scaling_mode Full aspect

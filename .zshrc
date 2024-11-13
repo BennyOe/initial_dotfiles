@@ -4,6 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source $HOME/.exports
 
 ###############
 ### Exports ###
@@ -13,7 +14,7 @@ export PATH=$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
 # ruby to PATH
-export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin/
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 export PATH=$PATH:/usr/lib/ruby/gems/3.0.0
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
@@ -24,7 +25,8 @@ export ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 export ANDROID_SDK_ROOT=$HOME/Tools/android
 # export ANDROID_SDK_ROOT=$HOME/Android/Sdk/android-sdk
 # export ANDROID_HOME='/opt/android-sdk'
-export CHROME_EXECUTABLE='/usr/bin/brave'
+# export CHROME_EXECUTABLE='/usr/bin/chromium'
+export CHROME_EXECUTABLE="${HOME}/.local/bin/no_cors_chrome"
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
@@ -36,6 +38,11 @@ export PATH=$PATH:$HOME/.dotnet/tools/
 export PATH="$(yarn global bin):$PATH"
 # dart globals
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+# managed flutter
+export PATH=$HOME/fvm/default/bin:$PATH
+# golang
+export GOPATH=$HOME/Tools/go
+export PATH=$PATH:$GOPATH/bin
 
 #################
 
@@ -130,6 +137,9 @@ alias doc='docker-compose'
 # flutter
 alias fpg='flutter pub get'
 alias fpa='flutter pub add'
+# managed flutter
+alias fvr='fvm flutter run'
+alias dbrw='fvm dart run build_runner watch'
 
 # zip everything that is checked into git used like this: gitzip [OUTPUT_FILE]
 alias gitzip="git archive HEAD -o "
@@ -140,11 +150,26 @@ alias zaz='uskeys'
 alias sshcp='xclip -sel clip < ~/.ssh/id_ed25519.pub'
 
 # project based aliases
-alias icw='cd ~/Uni/icw2/ && v icw2.tex'
+alias mdt='cd ~/Projects/Mundet'
+alias mdtrm='cd ~/Projects/Mundet/mundet_recipe_maker'
+alias mdtct='cd ~/Projects/Mundet/mundet-flutter'
+alias mdtsl='cd ~/Projects/Mundet/mundet_shared_lib'
 
-# open the last editet chapter
-ba() {
-    cd ~/uni/BA/bachelor_thesis/bachelor_thesis/chapters/
+# keep screen on
+alias caff='xset s off -dpms'
+alias decaff='xset s on +dpms'
+
+# run velocidrone when there is no internet
+alias velo='~/.local/share/PatchKit/Apps/d5f20cca/app/velocidrone.x86_64'
+
+# open the master_thesis folder
+alias ma='cd ~/Uni/MA/master_thesis'
+alias mai='cd ~/Uni/MA/implementations'
+alias mar='cd ~/Uni/MA/implementations/rest/'
+
+# open the last editet chapter of the master_thesis
+mat() {
+    cd ~/Uni/MA/master_thesis/text/
     resize &
     nvim *(om[1]) -c "VimtexCompile"
 }
@@ -232,3 +257,9 @@ function ya() {
 
 source /home/paul/.config/broot/launcher/bash/br
 source /usr/share/nvm/init-nvm.sh
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/paul/.dart-cli-completion/zsh-config.zsh ]] && . /home/paul/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
